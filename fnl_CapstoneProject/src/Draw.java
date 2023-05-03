@@ -10,20 +10,25 @@ import javax.swing.*;
 @SuppressWarnings("serial")
 public class Draw extends JPanel {
 
-	JPanel panel;
-	JFrame score;
-	JFrame points;
-	JFrame resources;
-	JButton buyBuilding1;
-	JButton buyBuilding2;
-	JButton buyBuilding3;
-	JButton buyBuilding4;
+	// JPanel panel;
+	// JFrame score;
+	// JFrame points;
+	// JFrame resources;
+	// JButton buyBuilding1;
+	// JButton buyBuilding2;
+	// JButton buyBuilding3;
+	// JButton buyBuilding4;
 	
 	public void paint(Graphics g) {
-		   
-	      super.paintComponent(g);
+		
+		super.paintComponent(g);
 	      
-	      g.setColor(Color.GRAY);
+		g.setColor(Color.GRAY);
+		
+		int xCenter = getWidth() / 2;
+	    int yCenter = getHeight() / 2;
+		g.drawRect(xCenter, yCenter - 250, 150, 30);
+		g.drawRect(xCenter + 150, yCenter - 250, 150, 30);
 	      
 	}
 	
