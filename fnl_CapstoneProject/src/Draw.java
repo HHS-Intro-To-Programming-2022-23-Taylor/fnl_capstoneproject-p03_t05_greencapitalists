@@ -15,6 +15,7 @@ public class Draw extends JPanel {
 	// JFrame points;
 	// JFrame resources;
 	// JButton buyBuilding1;
+	
 	// JButton buyBuilding2;
 	// JButton buyBuilding3;
 	// JButton buyBuilding4;
@@ -25,10 +26,10 @@ public class Draw extends JPanel {
 	      
 		g.setColor(Color.GRAY);
 		
-		int xCenter = getWidth() / 2;
-	    int yCenter = getHeight() / 2;
-		g.drawRect(xCenter, yCenter - 250, 150, 30);
-		g.drawRect(xCenter + 150, yCenter - 250, 150, 30);
+		g.drawRect(400, 50, 150, 30);
+		g.drawRect(550, 50, 150, 30);
+		
+		g.drawRect(50, 100, 100, 400);
 	      
 	}
 	
