@@ -7,17 +7,25 @@
 
 import java.awt.Image;
 
+import javax.swing.ImageIcon;
+
  public abstract class Building {
 	//Fields
 	private int enviScoreDecrease;
     private int points;
-    private Image unsustainable;
-    private Image sustainable;
-    
+    private Image img2;
+    private Image img1;
+
+   
 	
 	//Constructor
 	
+    
+    
+    
 	//Methods
+    
+    
     
     //Returns the environmental score decrease.
     public int getEnviScore()
@@ -26,15 +34,15 @@ import java.awt.Image;
     }
 
     //Returns the image for the sustainable building.
-    public Image getSustainable()
+    public Image getImage1()
     {
-    	return sustainable;
+    	return img1;
     }
     
     //Returns the image for the sustainable building. 
-    public Image getUnsustainable()
+    public Image getImage2()
     {
-    	return unsustainable;
+    	return img2;
     }
 
     //Returns the point value.
