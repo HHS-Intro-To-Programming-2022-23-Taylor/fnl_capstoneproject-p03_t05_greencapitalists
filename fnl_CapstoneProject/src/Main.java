@@ -8,7 +8,7 @@ public class Main {
 		
 		// create a window frame
 	    JFrame mainScreen = new JFrame ("Main Screen");
-	    mainScreen.setBounds(300, 300, 800, 600);   //establish initial size in pixels
+	    mainScreen.setBounds(300, 100, 800, 600);   //establish initial size in pixels
 	    mainScreen.getContentPane().setBackground(Color.WHITE); // set background color
 
 	    mainScreen.setResizable(false); // the window can be resized
