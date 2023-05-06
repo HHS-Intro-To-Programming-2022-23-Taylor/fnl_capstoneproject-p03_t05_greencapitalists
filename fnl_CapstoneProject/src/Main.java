@@ -10,6 +10,7 @@ public class Main {
 	    JFrame mainScreen = new JFrame ("Main Screen");
 	    mainScreen.setBounds(300, 100, 800, 600);   //establish initial size in pixels
 	    mainScreen.getContentPane().setBackground(Color.WHITE); // set background color
+	    
 
 	    mainScreen.setResizable(false); // the window can be resized
 	    mainScreen.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // this happens with window is closed
