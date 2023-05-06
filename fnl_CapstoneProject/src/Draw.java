@@ -17,7 +17,9 @@ public class Draw extends JPanel {
 	// JButton buyBuilding2;
 	// JButton buyBuilding3;
 	// JButton buyBuilding4;
-	JTextField display = new JTextField("hi");
+	// JTextField display = new JTextField("hi");
+	private Image buildings = new ImageIcon("buildings.gif").getImage();
+	private Image house = new ImageIcon("House.gif").getImage();
 	
 	public void paint(Graphics g) {
 		
@@ -33,6 +35,7 @@ public class Draw extends JPanel {
 		g.drawRect(50, 100, 200, 400);
 		g.drawString("Build House:", 70, 120);
 		g.drawString("resources", 70, 140);
+		g.drawImage(house, 200, 100, 50, 50, this);
 		g.drawRect(50, 100, 200, 300);
 		g.drawString("Build Store:", 70, 220);
 		g.drawString("resources", 70, 240);
@@ -42,17 +45,20 @@ public class Draw extends JPanel {
 		g.drawRect(50, 100, 200, 100);
 		g.drawString("Build Solar Panel:", 70, 420);
 		g.drawString("resources", 70, 440);
+		
 		g.drawString("Environmental Score:", 400, 500);
 		g.setColor(Color.GREEN);
 		g.drawString("100%", 515, 500);
-	      
+		
+	    g.drawImage(buildings, 300, 100, 400, 350, this);
+		
 	}
 	
-	public void reload()
-	{
-		// vendor.setResources(FULL_STOCK);
-		// display.setText(" " + vendor.getDeposit() + "  ");
-		repaint();
-	}
+//	public void reload()
+//	{
+//		// vendor.setResources(FULL_STOCK);
+//		// display.setText(" " + vendor.getDeposit() + "  ");
+//		repaint();
+//	}
 	
 }
