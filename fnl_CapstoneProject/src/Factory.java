@@ -42,8 +42,8 @@ public class Factory implements Building, ResourceBuilding
 		return cost;
 	} 
 
-	ActionListener giveResource()
-	{
-		
-	}
+//	ActionListener giveResource()
+//	{
+//		
+//	}
 }
