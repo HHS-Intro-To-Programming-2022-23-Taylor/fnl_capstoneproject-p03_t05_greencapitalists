@@ -13,16 +13,16 @@ public class ResourceManagement {
 	
 	//public Building building;
 	//resource
-		private int resources = 100; //Resources you start of with. Buy a factory first, please!
-		private int resourcesRate = 0; //The rate at which resources are generated (per second). dr/dt
+		static private int resources = 100; //Resources you start of with. Buy a factory first, please!
+		static private int resourcesRate = 0; //The rate at which resources are generated (per second). dr/dt
 	//environment score
-		private int environmentScore = 100; //Start of at 100%. Buying buildings will reduce this number. Hits zero, game over.
+		static private int environmentScore = 100; //Start of at 100%. Buying buildings will reduce this number. Hits zero, game over.
 	//points
-		private int points = 0; //Score for spending resource to build houses, etc.
+		static private int points = 0; //Score for spending resource to build houses, etc.
 	//our beloved timer :)
-		private int time = 180; //You will start with 180 seconds. Timer hits zero, game over. Do as much as you can by then.
+		static private int time = 180000; //You will start with 180 seconds. Timer hits zero, game over. Do as much as you can by then.
 	
-	private int houseCount = 0, storeCount = 0, factoryCount = 0, solarPanelCount = 0; //How many of each building
+	static private int houseCount = 0, storeCount = 0, factoryCount = 0, solarPanelCount = 0; //How many of each building
 		
 	//constructors
 	
