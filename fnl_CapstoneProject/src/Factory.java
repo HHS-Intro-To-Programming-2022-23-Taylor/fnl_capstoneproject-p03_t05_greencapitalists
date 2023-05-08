@@ -18,7 +18,8 @@ public class Factory implements Building, ResourceBuilding
 	 private Image img;
 	 private int cost = 50;
 	 int delay = 2000; //(Milliseconds)
-	 Timer timer = new Timer(delay, giveResource());
+	 ResourceManagement rm = new ResourceManagement();
+	// Timer timer = new Timer(delay, giveResource());
 
 
 

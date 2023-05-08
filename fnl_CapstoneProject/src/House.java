@@ -16,13 +16,14 @@ public class House implements Building{
 	private int points = 3;
 	private Image image  = new ImageIcon("house.gif").getImage();
 	private int cost;
+	ResourceManagement rm = new ResourceManagement();
 	
 	
 	
 	//Constructor
 	public House()
 	{
-		
+		rm
 	}
 	
 	

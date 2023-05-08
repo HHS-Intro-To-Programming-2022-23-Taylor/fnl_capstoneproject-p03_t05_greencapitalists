@@ -107,4 +107,25 @@ public class ResourceManagement {
 //			
 //		}
 //	}
+	
+	//Allows user to increase house count
+	public void setHouseCount(int increaseFactor)
+	{
+		houseCount += increaseFactor;
+	}
+	
+	public void setStoreCount(int increaseFactor)
+	{
+		storeCount += increaseFactor;
+	}
+	
+	public void setFactoryCount(int increaseFactor)
+	{
+		factoryCount += increaseFactor;
+	}
+	
+	public void setSolarCounts(int increaseFactor)
+	{
+		solarPanelCount += increaseFactor;
+	}
 }
