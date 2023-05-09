@@ -13,7 +13,7 @@ public class House implements Building{
 
 	//Fields
 	private int enviScoreDecrease = 5;
-	private int points = 3;
+	private int points = 2;
 	private Image image  = new ImageIcon("house.gif").getImage();
 	private int cost = 25;
 	

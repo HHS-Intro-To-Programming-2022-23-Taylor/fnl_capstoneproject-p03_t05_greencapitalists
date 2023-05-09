@@ -29,9 +29,6 @@ import javax.swing.ImageIcon;
 
     //Returns the point value.
     public int getPoints();
-
-    //Returns the type of the building
-    public String getType();
     
     //Returns buildings
     public int getCost();
