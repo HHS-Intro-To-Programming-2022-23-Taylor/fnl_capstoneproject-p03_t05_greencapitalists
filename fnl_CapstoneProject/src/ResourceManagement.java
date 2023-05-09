@@ -43,13 +43,13 @@ public class ResourceManagement {
 		storeCount++;
 	}
 	
-	public void buyHouse(int resourceCost, int pointsGained, int environmentDecrease) {
-		if (resourceCost > resources) {
+	public void buyHouse() {
+		if (house.getCost() > resources) {
 			return; //Cancels the whole method (Item cannot be bought!)
 		}
-		resources -= resourceCost;
-		environmentScore -= environmentDecrease;
-		points += pointsGained;
+		resources -= house.getCost();
+		environmentScore -= house.getEnviScore();
+		points += house.getPoints();
 		houseCount++;
 	}
 	

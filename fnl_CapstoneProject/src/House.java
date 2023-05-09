@@ -15,8 +15,7 @@ public class House implements Building{
 	private int enviScoreDecrease = 5;
 	private int points = 3;
 	private Image image  = new ImageIcon("house.gif").getImage();
-	private int cost;
-	ResourceManagement rm = new ResourceManagement();
+	private int cost = 25;
 	
 	
 	
