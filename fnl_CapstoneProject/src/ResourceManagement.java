@@ -23,6 +23,8 @@ public class ResourceManagement {
 		static private int time = 180000; //You will start with 180 seconds. Timer hits zero, game over. Do as much as you can by then.
 	
 	static private int houseCount = 0, storeCount = 0, factoryCount = 0, solarPanelCount = 0; //How many of each building
+	House house = new House();
+	Factory factory = new Factory();
 		
 	//constructors
 	
@@ -130,12 +132,6 @@ public class ResourceManagement {
 //		}
 //	}
 	
-	//All necessary code for when house is bought.
-	public void buyHouse()
-	{
-		buyBasicBuilding();
-		
-	}
 	
 	//Returns house count
 	public int getHouseCount()
