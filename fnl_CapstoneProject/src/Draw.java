@@ -24,6 +24,7 @@ public class Draw extends JPanel implements ActionListener {
 		
 		buyHouse = new JButton(" 25 ", house);
 	    buyHouse.addActionListener(this);
+	    buyHouse.setSize(20, 21);
 		buyStore = new JButton(" 10 ", house);
 		buyStore.addActionListener(this);
 		buyFactory = new JButton("  5  ", house);
@@ -31,12 +32,12 @@ public class Draw extends JPanel implements ActionListener {
 		buySolarPanel = new JButton("  5 ", house);
 		buySolarPanel.addActionListener(this);
 		
-		JPanel buttons = new JPanel(new GridLayout(10, 20, 20, 5));
+		JPanel buttons = new JPanel(new GridLayout(4, 1, 100, 0));
 		buttons.setBackground(Color.BLUE);
 		buttons.add(buyHouse);
-//		buttons.add(buyStore);
-//		buttons.add(buyFactory);
-//		buttons.add(buySolarPanel);
+		buttons.add(buyStore);
+		buttons.add(buyFactory);
+		buttons.add(buySolarPanel);
 		
 		this.add(buttons);
 		
@@ -77,7 +78,13 @@ public class Draw extends JPanel implements ActionListener {
 
 		// print environmental score
 		g.drawString("Environmental Score:", 400, 500);
-		g.setColor(Color.GREEN);
+		
+		// an environmental score below or equal to 20 means it turns red
+		if (resourceManager.getEnvironmentScore() <= 20) {
+			g.setColor(Color.RED);
+		} else {
+			g.setColor(Color.GREEN);
+		}
 		g.drawString(resourceManager.getEnvironmentScore() + "%", 515, 500);
 
 		// draws buildings image in screen's center
@@ -94,6 +101,7 @@ public class Draw extends JPanel implements ActionListener {
 		if (b == buyHouse)
 		{
 			resourceManager.buyHouse();
+			repaint();
 		}
 	}
 
