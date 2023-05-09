@@ -31,23 +31,45 @@ public class ResourceManagement {
 	//methods
 	
 	//This is called when a building is bought. Checks if can be bought first, then increases the points based on the building.
-	public void calculateBasicBuilding(int resourceCost, int pointsGained, int environmentDecrease) {
+	public void buyStore(int resourceCost, int pointsGained, int environmentDecrease) {
 		if (resourceCost > resources) {
 			return; //Cancels the whole method (Item cannot be bought!)
 		}
 		resources -= resourceCost;
 		environmentScore -= environmentDecrease;
 		points += pointsGained;
+		storeCount++;
+	}
+	
+	public void buyHouse(int resourceCost, int pointsGained, int environmentDecrease) {
+		if (resourceCost > resources) {
+			return; //Cancels the whole method (Item cannot be bought!)
+		}
+		resources -= resourceCost;
+		environmentScore -= environmentDecrease;
+		points += pointsGained;
+		houseCount++;
 	}
 	
 	//This is called when a building is bought. Checks if can be bought first, then sets the increase in rate.
-	public void calculateResourceBuilding(int resourceCost, int rateIncrease, int environmentDecrease) {
+	public void buyFactory(int resourceCost, int rateIncrease, int environmentDecrease, int pointsGained) {
 		if (resourceCost > resources) {
 			return; //Cancels the whole method (Item cannot be bought!)
 		}
 		resources -= resourceCost;
 		environmentScore -= environmentDecrease;
 		resourcesRate += rateIncrease;
+		factoryCount++;
+	}
+	
+	public void buySolar(int resourceCost, int rateIncrease, int environmentDecrease, int pointsGained) {
+		if (resourceCost > resources) {
+			return; //Cancels the whole method (Item cannot be bought!)
+		}
+		resources -= resourceCost;
+		environmentScore -= environmentDecrease;
+		resourcesRate += rateIncrease;
+		
 	}
 	
 	//CATEGORY: Resources
@@ -108,24 +130,34 @@ public class ResourceManagement {
 //		}
 //	}
 	
-	//Allows user to increase house count
-	public void setHouseCount(int increaseFactor)
+	//All necessary code for when house is bought.
+	public void buyHouse()
 	{
-		houseCount += increaseFactor;
+		buyBasicBuilding();
+		
 	}
 	
-	public void setStoreCount(int increaseFactor)
+	//Returns house count
+	public int getHouseCount()
 	{
-		storeCount += increaseFactor;
+		return houseCount;
 	}
 	
-	public void setFactoryCount(int increaseFactor)
+	//Returns store count
+	public int getStoreCount()
 	{
-		factoryCount += increaseFactor;
+		return storeCount;
 	}
 	
-	public void setSolarCounts(int increaseFactor)
+	//Returns factory
+	public int getFactoryCount()
 	{
-		solarPanelCount += increaseFactor;
+		return factoryCount;
+	}
+	
+	//Returns solar count
+	public int getSolarCounts()
+	{
+		return solarPanelCount;
 	}
 }

@@ -23,7 +23,7 @@ public class House implements Building{
 	//Constructor
 	public House()
 	{
-		rm
+		
 	}
 	
 	
