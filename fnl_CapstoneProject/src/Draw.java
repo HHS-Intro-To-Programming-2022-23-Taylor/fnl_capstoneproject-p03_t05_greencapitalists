@@ -34,15 +34,24 @@ public class Draw extends JPanel implements ActionListener {
 		buySolarPanel = new JButton("  5 ", solarPanel);
 		buySolarPanel.addActionListener(this);
 		
-		JPanel buttons = new JPanel(new GridLayout(4, 1, 0, 60));
-		buttons.setBackground(Color.BLUE);
-		buttons.setBounds(0, 0, 50, 10);
-		buttons.add(buyHouse);
-		buttons.add(buyStore);
-		buttons.add(buyFactory);
-		buttons.add(buySolarPanel);
+		// grid  = new JPanel(new GridLayout(0,9));
 		
-		this.add(buttons);
+		JPanel button1 = new JPanel(new GridLayout(4, 5, 50, 60));
+		JPanel button2 = new JPanel(new GridLayout(4, 1, 0, 60));
+		JPanel button3 = new JPanel(new GridLayout(4, 1, 0, 60));
+		JPanel button4 = new JPanel(new GridLayout(4, 1, 0, 60));
+		cells = new PanelCell[5+1][5+1];
+		// buttons.setBackground(Color.BLUE);
+		button1.setBounds(100, 0, 50, 10);
+		button1.add(buyHouse);
+		button2.add(buyStore);
+		button3.add(buyFactory);
+		button4.add(buySolarPanel);
+		
+		this.add(button1);
+		this.add(button2);
+		this.add(button3);
+		this.add(button4);
 		
 	}
 	
