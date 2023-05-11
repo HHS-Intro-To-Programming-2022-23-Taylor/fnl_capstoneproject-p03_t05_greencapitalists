@@ -1,77 +1,39 @@
 package gridWithButtons;
+// Author: Sanah Bhandari
+// Date  : May 2, 2023
+// Rev   : 01
+// Notes : Notes go here
 
-import java.awt.FlowLayout;
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
-import java.awt.GridLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.*;
+import javax.swing.*;
 
-import javax.swing.BoxLayout;
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-
-public class Main extends JPanel {
+public class Main {
 
 	public static void main(String[] args) {
+		// TODO Auto-generated method stub
 
-		JFrame window = new JFrame("Grid responds to JButton Demo");
-		window.setLayout(new BoxLayout(window.getContentPane(), BoxLayout.Y_AXIS));
-		window.setLayout(new GridBagLayout());
-		
-		
-	    GridBagConstraints c = new GridBagConstraints();
-//	    if (shouldFill) {
-//	    	//natural height, maximum width
-	    	c.fill = GridBagConstraints.VERTICAL;
-//	    }
-		
-		JPanel controlPanel = new JPanel();
-		Grid grid = new Grid();
-		//int gridDimension = Math.max(Grid.CANVAS_WIDTH+8, Grid.CANVAS_HEIGHT+32);
-		grid.setSize(Grid.CANVAS_WIDTH+8, Grid.CANVAS_HEIGHT+32);
-
-		
-		
-		controlPanel.setLayout(new FlowLayout());
-		JButton button = new JButton("Change");
-		button.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				grid.respondToButton();
-			}
-		});
-		controlPanel.add(button);
-		
-		JButton resetButton = new JButton("Reset");
-		resetButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				grid.reset();
-			}
-		});
-		controlPanel.add(resetButton);
-		
-	    c.gridx = 0;
-	    c.gridy = 0;
-		window.getContentPane().add(controlPanel);		
-		
-	    c.ipady = Grid.CANVAS_HEIGHT+8;      //make this component tall
-	    c.ipadx = Grid.CANVAS_WIDTH+32;
-	    c.gridwidth = GridBagConstraints.REMAINDER;
-	    c.gridx = 0;
-	    c.gridy = 1;
-		window.getContentPane().add(grid,c);
-		
+		// create a window frame
+		JFrame mainScreen = new JFrame ("Main Screen");
+		mainScreen.setBounds(300, 100, 800, 600);   //establish initial size in pixels
+		mainScreen.getContentPane().setBackground(Color.WHITE); // set background color
 
 
-		
-		// doesn't account for JFrame's frame!
-		// Hack - add some pixel to the width and height
-		window.setSize(Grid.CANVAS_WIDTH+8, Grid.CANVAS_HEIGHT+132);	
-	
-		window.setVisible(true);
-		window.setResizable(false);
-	
+		mainScreen.setResizable(false); // the window can be resized
+		mainScreen.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // this happens with window is closed
+		mainScreen.setVisible(true);
+
+		// create components (widgets) to add to the window.  this can be panels, buttons, images, etc.
+		// in this case a new panel     
+		Draw mainPanel = new Draw(); // create a panel to add to window
+		mainPanel.setBackground(Color.WHITE);// set the background color of the panel to white
+
+		// add the panel to the frame
+		Container windowContainer = mainScreen.getContentPane();// get the window's container
+		windowContainer.add(mainPanel); // add the panel to the window
+
+		// make the window visible
+		mainScreen.setVisible(true);
+
 	}
 
 }
