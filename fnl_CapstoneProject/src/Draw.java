@@ -34,7 +34,7 @@ public class Draw extends JPanel implements ActionListener {
 		buySolarPanel = new JButton("  5 ", solarPanel);
 		buySolarPanel.addActionListener(this);
 		
-		JPanel buttons = new JPanel(new GridLayout(4, 1, 0, 10));
+		JPanel buttons = new JPanel(new GridLayout(4, 1, 0, 60));
 		buttons.setBackground(Color.BLUE);
 		buttons.setBounds(0, 0, 50, 10);
 		buttons.add(buyHouse);
