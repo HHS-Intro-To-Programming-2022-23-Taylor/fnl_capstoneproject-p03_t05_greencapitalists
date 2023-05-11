@@ -1,16 +1,14 @@
-import java.awt.Image;
 
 public class SolarPanel implements Building, ResourceBuilding{
 
 	//Fields
-	 private int enviScoreDecrease;
-	 private int points;
-	 private Image img;
-	 private int cost;
+	 private int enviScoreDecrease = 15;
+	 private int points = 10;
+	 private int cost = 150;
 	 private int resourcesPerFiveSecond;
 	
 	public int getEnviScore() {
-		return enviScoreDecrease = 3;
+		return enviScoreDecrease;
 	}
 
 	public int getPoints() {
@@ -18,7 +16,7 @@ public class SolarPanel implements Building, ResourceBuilding{
 	}
 
 	public int getCost() {
-		return cost = 150;
+		return cost;
 	}
 	
 	public int getResourcesRate()
