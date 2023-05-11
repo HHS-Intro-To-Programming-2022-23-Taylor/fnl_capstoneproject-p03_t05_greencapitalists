@@ -18,17 +18,20 @@ public class Draw extends JPanel implements ActionListener {
 	// JTextField display = new JTextField("hi");
 	private Image buildings = new ImageIcon("buildings.gif").getImage();
 	private ImageIcon house = new ImageIcon("House.gif");
+	private ImageIcon store = new ImageIcon("Store.gif");
+	private ImageIcon factory = new ImageIcon("Factory.gif");
+	private ImageIcon solarPanel = new ImageIcon("SolarPanel.gif");
 	ResourceManagement resourceManager = new ResourceManagement();
 
 	public Draw() {
 		
-		buyHouse = new JButton(" 25 ");
+		buyHouse = new JButton(" 25 ", house);
 	    buyHouse.addActionListener(this);
-		buyStore = new JButton(" 50 ");
+		buyStore = new JButton(" 50 ", store);
 		buyStore.addActionListener(this);
-		buyFactory = new JButton("  5  ", house);
+		buyFactory = new JButton("  5  ", factory);
 		buyFactory.addActionListener(this);
-		buySolarPanel = new JButton("  5 ", house);
+		buySolarPanel = new JButton("  5 ", solarPanel);
 		buySolarPanel.addActionListener(this);
 		
 		JPanel buttons = new JPanel(new GridLayout(4, 1, 0, 10));
@@ -36,8 +39,8 @@ public class Draw extends JPanel implements ActionListener {
 		buttons.setBounds(0, 0, 50, 10);
 		buttons.add(buyHouse);
 		buttons.add(buyStore);
-//		buttons.add(buyFactory);
-//		buttons.add(buySolarPanel);
+		buttons.add(buyFactory);
+		buttons.add(buySolarPanel);
 		
 		this.add(buttons);
 		
@@ -59,6 +62,7 @@ public class Draw extends JPanel implements ActionListener {
 		g.drawRect(50, 100, 200, 400);
 		g.drawString("Build House:", 70, 120);
 		g.drawString("Resources", 70, 140);
+		
 		//g.drawImage(house, 200, 100, 50, 50, this);
 
 		// build stores box
