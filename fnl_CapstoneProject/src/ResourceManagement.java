@@ -24,6 +24,7 @@ public class ResourceManagement {
 	
 	static private int houseCount = 0, storeCount = 0, factoryCount = 0, solarPanelCount = 0; //How many of each building
 	House house = new House();
+	Store store = new Store();
 	Factory factory = new Factory();
 		
 	//constructors
@@ -33,13 +34,13 @@ public class ResourceManagement {
 	//methods
 	
 	//This is called when a building is bought. Checks if can be bought first, then increases the points based on the building.
-	public void buyStore(int resourceCost, int pointsGained, int environmentDecrease) {
-		if (resourceCost > resources) {
+	public void buyStore() {
+		if (store.getCost() > resources) {
 			return; //Cancels the whole method (Item cannot be bought!)
 		}
-		resources -= resourceCost;
-		environmentScore -= environmentDecrease;
-		points += pointsGained;
+		resources -= store.getCost();
+		environmentScore -= store.getEnviScore();
+		points += store.getPoints();
 		storeCount++;
 	}
 	

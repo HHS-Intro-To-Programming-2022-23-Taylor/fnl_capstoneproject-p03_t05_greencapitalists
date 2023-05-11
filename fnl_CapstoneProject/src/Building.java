@@ -24,9 +24,6 @@ import javax.swing.ImageIcon;
     //Returns the environmental score decrease.
     public int getEnviScore();
 
-    //Returns the image for the sustainable building.
-    public Image getImage1();
-
     //Returns the point value.
     public int getPoints();
     

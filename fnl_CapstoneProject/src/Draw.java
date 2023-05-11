@@ -22,22 +22,22 @@ public class Draw extends JPanel implements ActionListener {
 
 	public Draw() {
 		
-		buyHouse = new JButton(" 25 ", house);
+		buyHouse = new JButton(" 25 ");
 	    buyHouse.addActionListener(this);
-	    buyHouse.setSize(20, 21);
-		buyStore = new JButton(" 10 ", house);
+		buyStore = new JButton(" 50 ");
 		buyStore.addActionListener(this);
 		buyFactory = new JButton("  5  ", house);
 		buyFactory.addActionListener(this);
 		buySolarPanel = new JButton("  5 ", house);
 		buySolarPanel.addActionListener(this);
 		
-		JPanel buttons = new JPanel(new GridLayout(4, 1, 100, 0));
+		JPanel buttons = new JPanel(new GridLayout(4, 1, 0, 10));
 		buttons.setBackground(Color.BLUE);
+		buttons.setBounds(0, 0, 50, 10);
 		buttons.add(buyHouse);
 		buttons.add(buyStore);
-		buttons.add(buyFactory);
-		buttons.add(buySolarPanel);
+//		buttons.add(buyFactory);
+//		buttons.add(buySolarPanel);
 		
 		this.add(buttons);
 		
@@ -58,23 +58,23 @@ public class Draw extends JPanel implements ActionListener {
 		// build houses box
 		g.drawRect(50, 100, 200, 400);
 		g.drawString("Build House:", 70, 120);
-		g.drawString("resources", 70, 140);
+		g.drawString("Resources", 70, 140);
 		//g.drawImage(house, 200, 100, 50, 50, this);
 
 		// build stores box
 		g.drawRect(50, 100, 200, 300);
 		g.drawString("Build Store:", 70, 220);
-		g.drawString("resources", 70, 240);
+		g.drawString("Resources", 70, 240);
 
 		// build factories box
 		g.drawRect(50, 100, 200, 200);
 		g.drawString("Build Factory:", 70, 320);
-		g.drawString("resources", 70, 340);
+		g.drawString("Resources", 70, 340);
 
 		// build solar panels box
 		g.drawRect(50, 100, 200, 100);
 		g.drawString("Build Solar Panel:", 70, 420);
-		g.drawString("resources", 70, 440);
+		g.drawString("Resources", 70, 440);
 
 		// print environmental score
 		g.drawString("Environmental Score:", 400, 500);
@@ -93,14 +93,17 @@ public class Draw extends JPanel implements ActionListener {
 		// buttons.draw(g);
 	}
 
-	@Override
 	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
 		JButton b = (JButton)e.getSource();
 		
 		if (b == buyHouse)
 		{
 			resourceManager.buyHouse();
+			repaint();
+		}
+		if (b == buyStore)
+		{
+			resourceManager.buyStore();
 			repaint();
 		}
 	}

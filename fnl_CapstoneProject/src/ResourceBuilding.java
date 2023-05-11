@@ -14,7 +14,7 @@ import javax.swing.ImageIcon;
 public interface ResourceBuilding{
 
 //	Fields - Just a reference on what fields are needed
-	//int delay = 2000; //(Milliseconds)
+	//int resourcesPerFiveSecond
 	
 
 	
