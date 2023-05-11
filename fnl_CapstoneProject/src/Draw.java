@@ -43,7 +43,7 @@ public class Draw extends JPanel implements ActionListener {
 		// JPanel button2 = new JPanel(grid);
 		// JPanel button3 = new JPanel(new GridLayout(4, 1, 0, 0));
 		// JPanel button4 = new JPanel(new GridLayout(1, 5, 0, 0));
-		JPanel buttons = new JPanel(new BorderLayout());
+		JPanel buttons = new JPanel(new GridLayout(4, 1, 0, 0));
 		// cells = new PanelCell[5+1][5+1];
 		buttons.setBackground(Color.BLUE);
 		// buttons.setBounds(100, 0, 50, 10);
