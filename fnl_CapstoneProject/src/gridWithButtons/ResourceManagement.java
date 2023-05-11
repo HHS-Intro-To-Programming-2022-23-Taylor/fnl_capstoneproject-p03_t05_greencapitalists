@@ -1,3 +1,4 @@
+package gridWithButtons;
 /*
 Author: David Dai
 Date: 5/2/23
@@ -72,7 +73,6 @@ public class ResourceManagement {
 		resources -= resourceCost;
 		environmentScore -= environmentDecrease;
 		resourcesRate += rateIncrease;
-		solarPanelCount++;
 		
 	}
 	
@@ -89,8 +89,8 @@ public class ResourceManagement {
 	}
 	
 	//For others classes to use if needed, may delete if unnecessary
-	public void giveResource() {
-		resources += resourcesRate;
+	public int giveResource(int resourceRate) {
+		return resources += resourceRate;
 	}
 	
 	//CATEGORY: Points
@@ -158,9 +158,4 @@ public class ResourceManagement {
 	{
 		return solarPanelCount;
 	}
-	
-	while (time > 0 && envrionmentScore > 0) {
-		giveResource();
-	}
-	
 }
