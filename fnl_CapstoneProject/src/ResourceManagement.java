@@ -91,6 +91,9 @@ public class ResourceManagement {
 	//For others classes to use if needed, may delete if unnecessary
 	public void giveResource() {
 		resources += resourcesRate;
+		while (time > 0 && environmentScore > 0) {
+			giveResource();
+		}
 	}
 	
 	//CATEGORY: Points
@@ -159,8 +162,6 @@ public class ResourceManagement {
 		return solarPanelCount;
 	}
 	
-	while (time > 0 && envrionmentScore > 0) {
-		giveResource();
-	}
 	
 }
+

@@ -8,7 +8,7 @@ import java.awt.event.*;
 import javax.swing.*;
 
 @SuppressWarnings("serial")
-public class Draw extends JPanel implements ActionListener {
+public class Draw extends JPanel implements ActionListener, MouseListener {
 
 	// JPanel panel;
 	// JFrame score;
@@ -22,6 +22,9 @@ public class Draw extends JPanel implements ActionListener {
 	private ImageIcon factory = new ImageIcon("Factory.gif");
 	private ImageIcon solarPanel = new ImageIcon("SolarPanel.gif");
 	ResourceManagement resourceManager = new ResourceManagement();
+	
+	private int mouseX;
+	private int mouseY;
 
 	public Draw() {
 		
@@ -128,6 +131,29 @@ public class Draw extends JPanel implements ActionListener {
 			resourceManager.buyStore();
 			repaint();
 		}
+	}
+
+	public void mouseClicked(MouseEvent e) {
+		mouseX = e.getX();
+		mouseY = e.getY();
+		System.out.println("X: " + mouseX + " Y: " + mouseY);
+		
+	}
+
+	public void mousePressed(MouseEvent e) {
+		
+	}
+
+	public void mouseReleased(MouseEvent e) {
+		
+	}
+
+	public void mouseEntered(MouseEvent e) {
+		
+	}
+
+	public void mouseExited(MouseEvent e) {
+		
 	}
 
 
