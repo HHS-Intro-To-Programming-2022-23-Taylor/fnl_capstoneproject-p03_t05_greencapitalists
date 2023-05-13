@@ -161,6 +161,8 @@ public class Draw extends JPanel implements ActionListener, MouseListener {
 		mouseY = e.getY();
 		System.out.println("X: " + mouseX + " Y: " + mouseY);
 		
+		
+		
 	}
 
 	public void mousePressed(MouseEvent e) {
