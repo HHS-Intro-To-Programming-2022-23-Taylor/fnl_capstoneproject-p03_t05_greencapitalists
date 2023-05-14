@@ -110,7 +110,7 @@ public class ResourceManagement {
 	
 	//CATEGORY: Environment Score
 	
-	//For others classes to use if needed, may delete if unnecessary
+	//For draw to know what the environment score is, so it can write it on the screen.
 	public int getEnvironmentScore() {
 		return environmentScore;
 	}
@@ -138,25 +138,25 @@ public class ResourceManagement {
 //	}
 	
 	
-	//Returns house count
+	//Returns the amount of houses built by the player.
 	public int getHouseCount()
 	{
 		return houseCount;
 	}
 	
-	//Returns store count
+	//Returns the amount of stores built by the player.
 	public int getStoreCount()
 	{
 		return storeCount;
 	}
 	
-	//Returns factory
+	//Returns the amount of factories built by the player.
 	public int getFactoryCount()
 	{
 		return factoryCount;
 	}
 	
-	//Returns solar count
+	//Returns the amount of solar panels built by the player.
 	public int getSolarCounts()
 	{
 		return solarPanelCount;
