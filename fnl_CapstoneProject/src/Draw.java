@@ -26,6 +26,7 @@ public class Draw extends JPanel implements ActionListener, MouseListener {
 	private int mouseX;
 	private int mouseY;
 
+	//Instantiates and draws the main JPanel, JComponent, instantiates all the JFrames, etc.
 	public Draw() {
 		// Below is what usually goes in the main method. It was moved to draw to make the MouseListener class easier to use.
 		JFrame mainScreen = new JFrame ("Main Screen");
@@ -90,6 +91,7 @@ public class Draw extends JPanel implements ActionListener, MouseListener {
 		this.add(buttons);
 	}
 	
+	//Draws the rest of the graphics. 
 	public void paint(Graphics g) {
 
 		super.paintComponent(g);
@@ -141,6 +143,7 @@ public class Draw extends JPanel implements ActionListener, MouseListener {
 		// buttons.draw(g);
 	}
 
+	//Checks whenever a button, or something else, is clicked.
 	public void actionPerformed(ActionEvent e) {
 		JButton b = (JButton)e.getSource();
 		
@@ -156,6 +159,7 @@ public class Draw extends JPanel implements ActionListener, MouseListener {
 		}
 	}
 
+	//Checks where and when a mouse is clicked on the JComponent. Used as a button.
 	public void mouseClicked(MouseEvent e) {
 		mouseX = e.getX();
 		mouseY = e.getY();
@@ -165,6 +169,8 @@ public class Draw extends JPanel implements ActionListener, MouseListener {
 		
 	}
 
+	
+	//All these methods are useless, they are not used in the program.
 	public void mousePressed(MouseEvent e) {
 		
 	}
