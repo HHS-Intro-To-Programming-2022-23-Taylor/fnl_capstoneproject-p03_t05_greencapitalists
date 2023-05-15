@@ -157,8 +157,8 @@ public class Draw extends JPanel implements ActionListener, MouseListener {
 		//Checks if solar panel is bought
 		if (mouseX >= 195 && mouseX <= 245 && mouseY >= 445 && mouseY <= 495)
 		{
-			resourceManager.buyHouse();
-			repaint();
+//			resourceManager.buySolarPanel();
+//			repaint();
 		}
 	}
 
