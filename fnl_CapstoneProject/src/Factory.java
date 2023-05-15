@@ -32,6 +32,12 @@ public class Factory implements Building, ResourceBuilding
 
 	public int getCost() {
 		return cost;
+	}
+
+	@Override
+	public int returnResourceRate() {
+		// TODO Auto-generated method stub
+		return 0;
 	} 
 
 //	ActionListener giveResource()

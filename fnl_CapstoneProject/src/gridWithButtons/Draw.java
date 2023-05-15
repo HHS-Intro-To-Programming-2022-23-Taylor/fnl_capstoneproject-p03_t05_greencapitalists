@@ -23,7 +23,7 @@ public class Draw extends JPanel implements ActionListener {
 	private ImageIcon factory = new ImageIcon("Factory.gif");
 	private ImageIcon solarPanel = new ImageIcon("SolarPanel.gif");
 	ResourceManagement resourceManager = new ResourceManagement();
-	GridLayout grid = new GridLayout(10, 10, 30, 30);
+	GridLayout grid = new GridLayout(10, 10, 30, 30);	
 
 	public Draw() {
 		
@@ -47,8 +47,8 @@ public class Draw extends JPanel implements ActionListener {
 		buttons.add(buyStore);
 		buttons.add(buyFactory);
 		buttons.add(buySolarPanel);
-		
 		this.add(buttons);
+		
 	}
 	
 	public void paint(Graphics g) {

@@ -24,4 +24,10 @@ public class SolarPanel implements Building, ResourceBuilding{
 		return resourcesPerFiveSecond;
 	}
 
+	@Override
+	public int returnResourceRate() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
 }

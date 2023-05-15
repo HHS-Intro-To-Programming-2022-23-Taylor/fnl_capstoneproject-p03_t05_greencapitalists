@@ -17,6 +17,7 @@ public interface ResourceBuilding{
 	//int resourcesPerFiveSecond
 	
 
+	public int returnResourceRate();
 	
 	
 
