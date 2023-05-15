@@ -17,10 +17,10 @@ public class Draw extends JPanel implements ActionListener, MouseListener {
 	JButton buyHouse, buyStore, buyFactory, buySolarPanel;
 	// JTextField display = new JTextField("hi");
 	private Image buildings = new ImageIcon("buildings.gif").getImage();
-	private ImageIcon house = new ImageIcon("House.gif");
-	private ImageIcon store = new ImageIcon("Store.gif");
-	private ImageIcon factory = new ImageIcon("Factory.gif");
-	private ImageIcon solarPanel = new ImageIcon("SolarPanel.gif");
+	private Image house = new ImageIcon("House.gif").getImage();
+	private Image store = new ImageIcon("Store.gif").getImage();
+	private Image factory = new ImageIcon("Factory.gif").getImage();
+	private Image solarPanel = new ImageIcon("SolarPanel.gif").getImage();
 	ResourceManagement resourceManager = new ResourceManagement();
 	
 	private int mouseX;
@@ -52,43 +52,6 @@ public class Draw extends JPanel implements ActionListener, MouseListener {
 		
 		windowContainer.addMouseListener(this);
 		
-		buyHouse = new JButton(" 25 ", house);
-	    buyHouse.addActionListener(this);
-		buyStore = new JButton(" 50 ", store);
-		buyStore.addActionListener(this);
-		buyFactory = new JButton("  5  ", factory);
-		buyFactory.addActionListener(this);
-		buySolarPanel = new JButton("  5 ", solarPanel);
-		buySolarPanel.addActionListener(this);
-		
-		GridLayout grid = new GridLayout(15,15);
-		
-		
-		// grid  = new JPanel(new GridLayout(0,9));
-		
-		// JPanel button1 = new JPanel(grid);
-		// JPanel button2 = new JPanel(grid);
-		// JPanel button3 = new JPanel(new GridLayout(4, 1, 0, 0));
-		// JPanel button4 = new JPanel(new GridLayout(1, 5, 0, 0));
-		JPanel buttons = new JPanel(new GridLayout(4, 1, 0, 0));
-		// cells = new PanelCell[5+1][5+1];
-		buttons.setBackground(Color.BLUE);
-		// buttons.setBounds(100, 0, 50, 10);
-		buttons.setLocation(200, 300);
-		// button1.add(buyHouse);
-		// button2.add(buyStore);
-		// button3.add(buyFactory);
-		// button4.add(buySolarPanel);
-		buttons.add(buyHouse);
-		buttons.add(buyStore);
-		buttons.add(buyFactory);
-		buttons.add(buySolarPanel);
-		
-		//this.add(button1);
-		//this.add(button2);
-		//this.add(button3);
-		//this.add(button4);
-		this.add(buttons);
 	}
 	
 	//Draws the rest of the graphics. 
@@ -140,7 +103,16 @@ public class Draw extends JPanel implements ActionListener, MouseListener {
 		// draws buildings image in screen's center
 		g.drawImage(buildings, 300, 100, 400, 350, this);
 
-		// buttons.draw(g);
+		//Draws all the images of the buildings, or "buttons"
+		g.setColor(Color.GREEN);
+		g.fillRect(190, 140, 60, 60);
+		g.drawImage(house, 195, 145, 50, 50, this);
+		g.fillRect(190, 240, 60, 60);
+		g.drawImage(store, 195, 245, 50, 50, this);
+		g.fillRect(190, 340, 60, 60);
+		g.drawImage(factory, 195, 345, 50, 50, this);
+		g.fillRect(190, 440, 60, 60);
+		g.drawImage(solarPanel, 195, 445, 50, 50, this);
 	}
 
 	//Checks whenever a button, or something else, is clicked.
@@ -163,10 +135,31 @@ public class Draw extends JPanel implements ActionListener, MouseListener {
 	public void mouseClicked(MouseEvent e) {
 		mouseX = e.getX();
 		mouseY = e.getY();
-		System.out.println("X: " + mouseX + " Y: " + mouseY);
 		
-		
-		
+		//Checks if house is bought
+		if (mouseX >= 195 && mouseX <= 245 && mouseY >= 145 && mouseY <= 195)
+		{
+			resourceManager.buyHouse();
+			repaint();
+		}
+		//Checks if store is bought
+		if (mouseX >= 195 && mouseX <= 245 && mouseY >= 245 && mouseY <= 295)
+		{
+			resourceManager.buyStore();
+			repaint();
+		}
+		//Checks if factory is bought
+		if (mouseX >= 195 && mouseX <= 245 && mouseY >= 345 && mouseY <= 395)
+		{
+//			resourceManager.buyFactory();
+//			repaint();
+		}
+		//Checks if solar panel is bought
+		if (mouseX >= 195 && mouseX <= 245 && mouseY >= 445 && mouseY <= 495)
+		{
+			resourceManager.buyHouse();
+			repaint();
+		}
 	}
 
 	
