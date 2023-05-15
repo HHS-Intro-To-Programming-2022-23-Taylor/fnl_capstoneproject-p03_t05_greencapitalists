@@ -70,14 +70,16 @@ public class Draw extends JPanel implements ActionListener, MouseListener {
 		// build houses box
 		g.drawRect(50, 100, 200, 400);
 		g.drawString("Build House:", 70, 120);
-		g.drawString("Resources", 70, 140);
+		g.drawString("Cost: 25 resources", 70, 140);
+		g.drawString("Credit: 2 points", 70, 160);
 		
 		//g.drawImage(house, 200, 100, 50, 50, this);
 
 		// build stores box
 		g.drawRect(50, 100, 200, 300);
 		g.drawString("Build Store:", 70, 220);
-		g.drawString("Resources", 70, 240);
+		g.drawString("Cost: 50 resources", 70, 240);
+		g.drawString("Credit: 10 points", 70, 260);
 
 		// build factories box
 		g.drawRect(50, 100, 200, 200);
