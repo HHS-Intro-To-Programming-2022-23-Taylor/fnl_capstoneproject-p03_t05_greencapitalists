@@ -1,24 +1,11 @@
-import java.awt.Image;
 
-public class Store implements Building {
-	 private int enviScoreDecrease = 5;
-	 private int points = 10;
-	 private int cost = 50;
+public class Store extends Building {
 
-	public int getEnviScore() {
-		return enviScoreDecrease;
+	//Constructors
+	public Store()
+	{
+		super(5, 10, 50);
 	}
 
-	public Image getImage1() {
-		return null;
-	}
-
-	public int getPoints() {
-		return points;
-	}
-
-	public int getCost() {
-		return cost;
-	}
 
 }

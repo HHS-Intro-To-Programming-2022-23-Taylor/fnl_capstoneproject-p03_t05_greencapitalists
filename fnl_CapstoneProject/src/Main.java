@@ -3,8 +3,6 @@
 // Rev   : 01
 // Notes : Notes go here
 
-import java.awt.*;
-import javax.swing.*;
 
 public class Main {
 
@@ -12,7 +10,7 @@ public class Main {
 		// TODO Auto-generated method stub
 
 		// create a window frame
-		Draw panel = new Draw();
+		new Draw();
 
 
 	}

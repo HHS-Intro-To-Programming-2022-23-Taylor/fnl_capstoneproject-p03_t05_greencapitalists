@@ -5,28 +5,43 @@
  * Notes  : 
  */
 
-import java.awt.Image;
-import javax.swing.ImageIcon;
 
- public interface Building {
-	//Fields - Just a reference on what fields are needed
-//	 private int enviScoreDecrease;
-//	 private int points;
-//	 private Image img;
-//	 private int cost;
+ public abstract class Building {
+	//Fields
+	 private int enviScoreDecrease = 0;
+	 private int points = 0;
+	 private int cost = 0;
+	 
+	 //Constructor
+	 public Building() //No-args constructor, for ResourceManagement
+	 {
+		 
+	 }
 
-    
+    public Building(int enviScoreDecreaseParameter, int pointsParameter, int costParameter)
+    {
+    	enviScoreDecrease = enviScoreDecreaseParameter;
+    	points = pointsParameter;
+    	cost = costParameter;
+    }
     
 	//Methods
     
-    
-    
     //Returns the environmental score decrease.
-    public int getEnviScore();
+    public int getEnviScore()
+    {
+    	return enviScoreDecrease;
+    }
 
     //Returns the point value.
-    public int getPoints();
+    public int getPoints()
+    {
+    	return points;
+    }
     
     //Returns buildings
-    public int getCost();
+    public int getCost()
+    {
+    	return cost;
+    }
  }

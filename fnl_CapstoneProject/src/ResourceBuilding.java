@@ -6,18 +6,28 @@
  */
 
 
-import java.awt.Image;
-
-import javax.swing.ImageIcon;
 
 
-public interface ResourceBuilding{
+public abstract class ResourceBuilding extends Building{
 
-//	Fields - Just a reference on what fields are needed
-	//int resourcesPerFiveSecond
+	private int resourceRate = 0;
 	
+	//Constructor
+	public ResourceBuilding()			//No-args Constructor
+	{
+		
+	}
+	
+	public ResourceBuilding(int enviScoreDecreaseParameter, int pointsParameter, int costParameter, int resourceRateParameter)
+	{
+		super(enviScoreDecreaseParameter, pointsParameter, costParameter);
+		resourceRate = resourceRateParameter;
+	}
 
-	public int returnResourceRate();
+	public int returnResourceRate()
+	{
+		return resourceRate; 
+	}
 	
 	
 

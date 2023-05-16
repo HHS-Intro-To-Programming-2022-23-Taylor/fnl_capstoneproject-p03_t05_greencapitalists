@@ -1,33 +1,12 @@
 
-public class SolarPanel implements Building, ResourceBuilding{
-
-	//Fields
-	 private int enviScoreDecrease = 15;
-	 private int points = 10;
-	 private int cost = 150;
-	 private int resourcesPerFiveSecond;
+public class SolarPanel extends ResourceBuilding{
 	
-	public int getEnviScore() {
-		return enviScoreDecrease;
-	}
+	 //Constructor
+	 public SolarPanel()
+	 {
+		 super(15, 10, 150, 1);
+	 }
+	 
 
-	public int getPoints() {
-		return points;
-	}
-
-	public int getCost() {
-		return cost;
-	}
-	
-	public int getResourcesRate()
-	{
-		return resourcesPerFiveSecond;
-	}
-
-	@Override
-	public int returnResourceRate() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
 
 }
