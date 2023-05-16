@@ -1,20 +1,11 @@
 /*
  * Author : Dhruv Jain
- * Date   : 5/6/23
- * Rev    : 01
+ * Date   : 5/2/23
+ * Rev    : 2
  * Notes  : None
  */
 
-
-public class House extends Building{
-
-	//Fields
-//	private int enviScoreDecrease = 5;
-//	private int points = 2;
-//	private Image image  = new ImageIcon("house.gif").getImage();
-//	private int cost = 25;
-	
-	
+public class House extends Building{	
 	
 	//Constructor
 	public House()
