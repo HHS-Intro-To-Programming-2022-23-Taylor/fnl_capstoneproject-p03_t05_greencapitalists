@@ -163,7 +163,7 @@ public class Draw extends JPanel implements ActionListener, MouseListener {
 //			repaint();
 		}
 	}
-
+ 
 	
 	//All these methods are useless, they are not used in the program.
 	public void mousePressed(MouseEvent e) {
