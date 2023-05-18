@@ -179,7 +179,7 @@ public class Draw extends JPanel implements ActionListener, MouseListener {
 	}
 
 	public void mouseExited(MouseEvent e) {
-		
+		System.out.println("sanah doesnt know what shes saying");
 	}
 
 
