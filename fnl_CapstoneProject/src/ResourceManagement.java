@@ -26,6 +26,7 @@ public class ResourceManagement {
 	House house = new House();
 	Store store = new Store();
 	Factory factory = new Factory();
+	SolarPanel solarPanel = new SolarPanel();
 		
 	//constructors
 	
@@ -55,23 +56,23 @@ public class ResourceManagement {
 	}
 	
 	//This is called when a building is bought. Checks if can be bought first, then sets the increase in rate.
-	public void buyFactory(int resourceCost, int rateIncrease, int environmentDecrease, int pointsGained) {
-		if (resourceCost > resources) {
+	public void buyFactory() {
+		if (factory.getCost() > resources) {
 			return; //Cancels the whole method (Item cannot be bought!)
 		}
-		resources -= resourceCost;
-		environmentScore -= environmentDecrease;
-		resourcesRate += rateIncrease;
+		resources -= factory.getCost();
+		environmentScore -= factory.getEnviScore();
+		resourcesRate += factory.getResourceRate();
 		factoryCount++;
 	}
 	
-	public void buySolar(int resourceCost, int rateIncrease, int environmentDecrease, int pointsGained) {
-		if (resourceCost > resources) {
+	public void buySolarPanel() {
+		if (solarPanel.getCost() > resources) {
 			return; //Cancels the whole method (Item cannot be bought!)
 		}
-		resources -= resourceCost;
-		environmentScore -= environmentDecrease;
-		resourcesRate += rateIncrease;
+		resources -= solarPanel.getCost();
+		environmentScore -= solarPanel.getEnviScore();
+		resourcesRate += solarPanel.getResourceRate();
 		solarPanelCount++;
 		
 	}

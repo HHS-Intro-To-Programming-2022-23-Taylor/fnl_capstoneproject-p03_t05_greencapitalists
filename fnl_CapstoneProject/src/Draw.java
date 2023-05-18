@@ -22,6 +22,9 @@ public class Draw extends JPanel implements ActionListener, MouseListener {
 	private Image factory = new ImageIcon("Factory.gif").getImage();
 	private Image solarPanel = new ImageIcon("SolarPanel.gif").getImage();
 	ResourceManagement resourceManager = new ResourceManagement();
+	private long startTime = System.currentTimeMillis();
+	long timeTillNextResource = 1000;
+
 	
 	private int mouseX;
 	private int mouseY;
@@ -115,6 +118,20 @@ public class Draw extends JPanel implements ActionListener, MouseListener {
 		g.drawImage(factory, 195, 345, 50, 50, this);
 		g.fillRect(190, 440, 60, 60);
 		g.drawImage(solarPanel, 195, 445, 50, 50, this);
+		
+		//Timer - Checks for elapsed time
+		long currentTime = System.currentTimeMillis();
+		long elapsedTime = currentTime - startTime;
+		if(elapsedTime >= timeTillNextResource)
+		{
+			timeTillNextResource += 1000;
+			resourceManager.giveResource();
+		}
+		
+		//Repaints the panel
+		repaint();
+		
+
 	}
 
 	//Checks whenever a button, or something else, is clicked.
@@ -142,25 +159,23 @@ public class Draw extends JPanel implements ActionListener, MouseListener {
 		if (mouseX >= 195 && mouseX <= 245 && mouseY >= 145 && mouseY <= 195)
 		{
 			resourceManager.buyHouse();
-			repaint();
 		}
 		//Checks if store is bought
 		if (mouseX >= 195 && mouseX <= 245 && mouseY >= 245 && mouseY <= 295)
 		{
 			resourceManager.buyStore();
-			repaint();
 		}
 		//Checks if factory is bought
 		if (mouseX >= 195 && mouseX <= 245 && mouseY >= 345 && mouseY <= 395)
 		{
-//			resourceManager.buyFactory();
-//			repaint();
+			resourceManager.buyFactory();
+			repaint();
 		}
 		//Checks if solar panel is bought
 		if (mouseX >= 195 && mouseX <= 245 && mouseY >= 445 && mouseY <= 495)
 		{
-//			resourceManager.buySolarPanel();
-//			repaint();
+			resourceManager.buySolarPanel();
+			repaint();
 		}
 	}
  
@@ -179,7 +194,7 @@ public class Draw extends JPanel implements ActionListener, MouseListener {
 	}
 
 	public void mouseExited(MouseEvent e) {
-		System.out.println("sanah doesnt know what shes saying");
+	
 	}
 
 

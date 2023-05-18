@@ -24,7 +24,7 @@ public abstract class ResourceBuilding extends Building{
 		resourceRate = resourceRateParameter;
 	}
 
-	public int returnResourceRate()
+	public int getResourceRate()
 	{
 		return resourceRate; 
 	}

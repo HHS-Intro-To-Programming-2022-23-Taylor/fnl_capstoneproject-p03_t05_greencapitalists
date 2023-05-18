@@ -10,7 +10,7 @@ public class Factory extends ResourceBuilding
 
 	 public Factory()
 	 {
-		 super(10, 15, 50, 1);
+		 super(10, 15, 80, 1);
 	 }
 
 }
