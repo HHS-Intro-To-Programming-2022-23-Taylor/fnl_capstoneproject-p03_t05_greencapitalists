@@ -11,6 +11,7 @@ public class Main {
 
 		// create a window frame
 		new Draw();
+		new GameControl();
 
 
 	}

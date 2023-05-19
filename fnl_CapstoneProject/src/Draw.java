@@ -8,7 +8,7 @@ import java.awt.event.*;
 import javax.swing.*;
 
 @SuppressWarnings("serial")
-public class Draw extends JPanel implements ActionListener, MouseListener {
+public class Draw extends JPanel implements MouseListener {
 
 	// JPanel panel;
 	// JFrame score;
