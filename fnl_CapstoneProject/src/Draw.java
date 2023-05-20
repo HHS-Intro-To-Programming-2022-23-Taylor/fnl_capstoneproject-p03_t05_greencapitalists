@@ -76,7 +76,7 @@ public class Draw extends JPanel implements MouseListener {
 		g.drawString("Build House:", 70, 120);
 		g.drawString("Cost: 25 resources", 70, 140);
 		g.drawString("Credit: 5 points", 70, 160);
-		g.drawString("Environment: -1%", 70, 180);
+		g.drawString("Environment: -5%", 70, 180);
 		
 		//Draw image in the center of the screen
 		g.drawImage(buildings, 550, 100, 200, 175, this);
@@ -86,20 +86,20 @@ public class Draw extends JPanel implements MouseListener {
 		g.drawString("Build Store:", 70, 220);
 		g.drawString("Cost: 100 resources", 70, 240);
 		g.drawString("Credit: 25 points", 70, 260);
-		g.drawString("Environment: -1%", 70, 280);
+		g.drawString("Environment: -5%", 70, 280);
 
 		// build factories box
 		g.drawRect(50, 100, 200, 200);
 		g.drawString("Build Factory:", 70, 320);
 		g.drawString("Cost: 80 resources", 70, 340);
 		g.drawString("Rate: 5 resource/sec", 70, 360);
-		g.drawString("Environment: -10%", 70, 380);
+		g.drawString("Environment: -25%", 70, 380);
 		
 
 		// build solar panels box
 		g.drawRect(50, 100, 200, 100);
 		g.drawString("Build Solar Panel:", 70, 420);
-		g.drawString("Cost: 150 resources", 70, 440);
+		g.drawString("Cost: 120 resources", 70, 440);
 		g.drawString("Rate: 2 resource/sec", 70, 460);
 		g.drawString("Environment: -0%", 70, 480);
 
