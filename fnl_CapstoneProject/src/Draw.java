@@ -16,7 +16,6 @@ public class Draw extends JPanel implements MouseListener {
 	// JFrame resources;
 	JButton buyHouse, buyStore, buyFactory, buySolarPanel;
 	// JTextField display = new JTextField("hi");
-	private Image buildings = new ImageIcon("buildings.gif").getImage();
 	private Image house = new ImageIcon("House.gif").getImage();
 	private Image store = new ImageIcon("Store.gif").getImage();
 	private Image factory = new ImageIcon("Factory.gif").getImage();
@@ -24,7 +23,6 @@ public class Draw extends JPanel implements MouseListener {
 	ResourceManagement resourceManager = new ResourceManagement();
 	private long startTime = System.currentTimeMillis();
 	long timeTillNextResource = 1000;
-
 	
 	private int mouseX;
 	private int mouseY;
@@ -105,8 +103,6 @@ public class Draw extends JPanel implements MouseListener {
 		}
 		g.drawString(resourceManager.getEnvironmentScore() + "%", 515, 500);
 
-		// draws buildings image in screen's center
-		g.drawImage(buildings, 300, 100, 400, 350, this);
 
 		//Draws all the images of the buildings, or "buttons"
 		g.setColor(Color.GREEN);
@@ -134,21 +130,6 @@ public class Draw extends JPanel implements MouseListener {
 
 	}
 
-	//Checks whenever a button, or something else, is clicked.
-	public void actionPerformed(ActionEvent e) {
-		JButton b = (JButton)e.getSource();
-		
-		if (b == buyHouse)
-		{
-			resourceManager.buyHouse();
-			repaint();
-		}
-		if (b == buyStore)
-		{
-			resourceManager.buyStore();
-			repaint();
-		}
-	}
 
 	//Checks where and when a mouse is clicked on the JComponent. Used as a button.
 	public void mouseClicked(MouseEvent e) {

@@ -19,8 +19,6 @@ public class ResourceManagement {
 		static private int environmentScore = 100; //Start of at 100%. Buying buildings will reduce this number. Hits zero, game over.
 	//points
 		static private int points = 0; //Score for spending resource to build houses, etc.
-	//our beloved timer :)
-		static private int time = 180000; //You will start with 180 seconds. Timer hits zero, game over. Do as much as you can by then.
 	
 	static private int houseCount = 0, storeCount = 0, factoryCount = 0, solarPanelCount = 0; //How many of each building
 	House house = new House();
