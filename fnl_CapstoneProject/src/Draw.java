@@ -19,6 +19,8 @@ public class Draw extends JPanel implements MouseListener {
 	private Image store = new ImageIcon("Store.gif").getImage();
 	private Image factory = new ImageIcon("Factory.gif").getImage();
 	private Image solarPanel = new ImageIcon("SolarPanel.gif").getImage();
+	private Image buildings = new ImageIcon("buildings.gif").getImage();
+
 	ResourceManagement resourceManager = new ResourceManagement();
 	private long startTime = System.currentTimeMillis();
 	long timeTillNextResource = 1000;
@@ -46,12 +48,14 @@ public class Draw extends JPanel implements MouseListener {
 		Container windowContainer = mainScreen.getContentPane();// get the window's container
 		windowContainer.add(this); // add the panel to the window
 
+
+
 		// make the window visible
 		mainScreen.setVisible(true);
 		//Above is the end of the usual main method code. Everything below is graphics, and not drawing the overall basic screen (Frame, Panel, Container etc)
 		
 		windowContainer.addMouseListener(this);
-		
+				
 	}
 	
 	//Draws the rest of the graphics. 
@@ -74,7 +78,8 @@ public class Draw extends JPanel implements MouseListener {
 		g.drawString("Credit: 2 points", 70, 160);
 		g.drawString("Environment: -5%", 70, 180);
 		
-		//g.drawImage(house, 200, 100, 50, 50, this);
+		//Draw image in the center of the screen
+		g.drawImage(buildings, 550, 100, 200, 175, this);
 
 		// build stores box
 		g.drawRect(50, 100, 200, 300);
@@ -97,7 +102,7 @@ public class Draw extends JPanel implements MouseListener {
 		g.drawString("Resources", 70, 440);
 
 		// print environmental score
-		g.drawString("Environmental Score:", 400, 500);
+		g.drawString("Environmental Score:", 400, 525);
 		
 		// an environmental score below or equal to 20 means it turns red
 		if (resourceManager.getEnvironmentScore() <= 20) {
@@ -105,7 +110,7 @@ public class Draw extends JPanel implements MouseListener {
 		} else {
 			g.setColor(Color.GREEN);
 		}
-		g.drawString(resourceManager.getEnvironmentScore() + "%", 515, 500);
+		g.drawString(resourceManager.getEnvironmentScore() + "%", 515, 525);
 
 
 		//Draws all the images of the buildings, or "buttons"
@@ -119,6 +124,34 @@ public class Draw extends JPanel implements MouseListener {
 		g.fillRect(190, 440, 60, 60);
 		g.drawImage(solarPanel, 195, 445, 50, 50, this);
 		
+		//Draws all the building counts
+		g.setColor(Color.BLACK);
+		g.drawString("Houses: ", 255, 360);
+		g.drawRect(255, 375, 200, 0);
+		g.drawString("Stores: ", 255, 390);
+		g.drawRect(255, 406, 200, 0);
+		g.drawString("Factories: ", 255, 420);
+		g.drawRect(255, 437, 200, 0);
+		g.drawString("Solar Panels: ", 255, 450);
+		g.drawRect(255, 468, 200, 0);
+		//Draws the building "bar graphs"
+		for(int i = 0; i < resourceManager.getHouseCount(); i++)	//Houses
+		{
+			g.drawImage(house, 330 + i*30, 345, 30, 30, this);
+		}
+		for(int i = 0; i < resourceManager.getStoreCount(); i++)	//Stores
+		{
+			g.drawImage(store, 330 + i*30, 376, 30, 30, this);
+		}
+		for(int i = 0; i < resourceManager.getFactoryCount(); i++)	//Factories
+		{
+			g.drawImage(factory, 330 + i*30, 407, 30, 30, this);
+		}
+		for(int i = 0; i < resourceManager.getSolarCount(); i++)	//Panels
+		{
+			g.drawImage(solarPanel, 330 + i*30, 438, 30, 30, this);
+		}
+		
 		//Timer - Checks for elapsed time
 		long currentTime = System.currentTimeMillis();
 		long elapsedTime = currentTime - startTime;
@@ -130,7 +163,6 @@ public class Draw extends JPanel implements MouseListener {
 		
 		//Repaints the panel
 		repaint();
-		
 
 	}
 

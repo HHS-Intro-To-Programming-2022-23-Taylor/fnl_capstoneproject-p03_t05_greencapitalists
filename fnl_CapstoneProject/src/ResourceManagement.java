@@ -153,7 +153,7 @@ public class ResourceManagement {
 	}
 	
 	//Returns the amount of solar panels built by the player.
-	public int getSolarCounts()
+	public int getSolarCount()
 	{
 		return solarPanelCount;
 	}
