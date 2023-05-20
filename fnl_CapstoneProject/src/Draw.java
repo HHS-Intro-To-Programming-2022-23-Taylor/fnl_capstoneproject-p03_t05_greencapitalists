@@ -14,7 +14,6 @@ public class Draw extends JPanel implements MouseListener {
 	// JFrame score;
 	// JFrame points;
 	// JFrame resources;
-	JButton buyHouse, buyStore, buyFactory, buySolarPanel;
 	// JTextField display = new JTextField("hi");
 	private Image house = new ImageIcon("House.gif").getImage();
 	private Image store = new ImageIcon("Store.gif").getImage();

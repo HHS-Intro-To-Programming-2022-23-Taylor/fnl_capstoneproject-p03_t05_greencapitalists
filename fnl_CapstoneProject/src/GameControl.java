@@ -13,14 +13,11 @@ public class GameControl extends JPanel{
 	private Image factory = new ImageIcon("Factory.gif").getImage();
 	private Image solarPanel = new ImageIcon("SolarPanel.gif").getImage();
 	private Image buildings = new ImageIcon("buildings.gif").getImage();
-	Graphics g;
-
 	
 	//Constructor (No-args)
 	public GameControl()
 	{
 
-		paint(g);
 	}
 	
 	//Methods
