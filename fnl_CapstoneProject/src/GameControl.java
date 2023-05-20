@@ -24,9 +24,12 @@ public class GameControl extends JPanel{
 	public void paint(Graphics g)
 	{
 		super.paintComponent(g);
-		System.out.println("called");
 		// draws buildings image in screen's center
 		g.drawImage(buildings, 300, 100, 400, 350, this);
+	}
+	
+	public void repaintScreen()
+	{
 		repaint();
 	}
 	
