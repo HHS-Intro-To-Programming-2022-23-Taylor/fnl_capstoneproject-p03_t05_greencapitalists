@@ -4,7 +4,7 @@ public class SolarPanel extends ResourceBuilding{
 	 //Constructor
 	 public SolarPanel()
 	 {
-		 super(15, 10, 150, 1);
+		 super(0, 10, 150, 2);
 	 }
 	 
 

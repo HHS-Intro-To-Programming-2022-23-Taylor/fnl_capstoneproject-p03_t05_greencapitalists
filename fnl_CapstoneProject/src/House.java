@@ -10,7 +10,7 @@ public class House extends Building{
 	//Constructor
 	public House()
 	{
-		super(5, 2, 25);
+		super(1, 5, 25);
 	}
 	
 

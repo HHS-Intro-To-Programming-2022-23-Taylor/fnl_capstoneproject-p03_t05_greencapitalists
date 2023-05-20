@@ -10,7 +10,7 @@ public class Store extends Building {
 	//Constructors
 	public Store()
 	{
-		super(5, 10, 50);
+		super(1, 25, 100);
 	}
 
 
