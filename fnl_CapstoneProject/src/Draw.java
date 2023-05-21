@@ -28,6 +28,9 @@ public class Draw extends JPanel implements MouseListener {
 	
 	private int mouseX;
 	private int mouseY;
+	
+	//Integer which keeps game running. If 0, game is running; if 1, game is over (3 minutes up); if two, game is lost (Environment score 0).
+	private int gameRunning = 0;
 
 	//Instantiates and draws the main JPanel, JComponent, instantiates all the JFrames, etc.
 	public Draw() {
@@ -70,7 +73,7 @@ public class Draw extends JPanel implements MouseListener {
 		g.drawRect(250,  50,  150,  30);
 		g.drawString("Time Left: " + (180 - timePassed), 300, 70);
 		g.drawRect(400, 50, 150, 30);
-		g.drawString(resourceManager.getResources() + " resources", 460, 70);
+		g.drawString(resourceManager.getResources() + " resources", 460, 70); 	
 		g.drawRect(550, 50, 150, 30);
 		g.drawString(resourceManager.getPoints() + " points", 610, 70);
 
@@ -178,6 +181,17 @@ public class Draw extends JPanel implements MouseListener {
 
 	}
 
+	//Allows the MainControl to change the gameRunning field, ending the game
+	public void setGameRunning(int newNum)
+	{
+		gameRunning = newNum;
+	}
+	
+	//Returns the time passed
+	public int getTimePassed()
+	{
+		return timePassed;
+	}
 
 	//Checks where and when a mouse is clicked on the JComponent. Used as a button.
 	public void mouseClicked(MouseEvent e) {

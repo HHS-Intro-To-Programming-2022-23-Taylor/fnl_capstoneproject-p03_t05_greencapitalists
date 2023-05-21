@@ -13,7 +13,24 @@ public class MainControl {
 		Draw mainScreen = new Draw();
 		ResourceManagement resourceManagement = new ResourceManagement();
 
+		checkStatus();
+		
 
+	
+	
+	}
+	
+	public static void checkStatus()
+	{
+//		if(resourceManagement.getEnvironmentScore() <= 0)
+//		{
+//			
+//		}
+//
+//		if(mainScreen.getTimePassed() > 10)
+//		{
+//			System.out.println("Entered");
+//		}
 	}
 
 }
