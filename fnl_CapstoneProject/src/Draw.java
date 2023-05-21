@@ -23,7 +23,8 @@ public class Draw extends JPanel implements MouseListener {
 
 	ResourceManagement resourceManager = new ResourceManagement();
 	private long startTime = System.currentTimeMillis();
-	long timeTillNextResource = 1000;
+	private long timeTillNextResource = 1000;
+	private int timePassed = 0;
 	
 	private int mouseX;
 	private int mouseY;
@@ -65,7 +66,9 @@ public class Draw extends JPanel implements MouseListener {
 
 		g.setColor(Color.BLACK);
 
-		// top 2 boxes
+		// top 3 boxes
+		g.drawRect(250,  50,  150,  30);
+		g.drawString("Time Left: " + (180 - timePassed), 300, 70);
 		g.drawRect(400, 50, 150, 30);
 		g.drawString(resourceManager.getResources() + " resources", 460, 70);
 		g.drawRect(550, 50, 150, 30);
@@ -161,6 +164,13 @@ public class Draw extends JPanel implements MouseListener {
 		{
 			timeTillNextResource += 1000;
 			resourceManager.giveResource();
+			timePassed++;
+		}
+		
+		//Makes sure values don't drop below 0
+		if(timePassed >= 180)
+		{
+			timePassed = 180;
 		}
 		
 		//Repaints the panel
