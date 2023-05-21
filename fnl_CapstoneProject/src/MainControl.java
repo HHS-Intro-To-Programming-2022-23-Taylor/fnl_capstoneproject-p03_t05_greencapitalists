@@ -16,17 +16,10 @@ public class MainControl {
 	
 	}
 	
-	public static void checkStatus()
+	public void checkStatus()
 	{
-//		if(resourceManagement.getEnvironmentScore() <= 0)
-//		{
-//			
-//		}
-//
-//		if(mainScreen.getTimePassed() > 10)
-//		{
-//			System.out.println("Entered");
-//		}
+	
+		
 	}
 
 }

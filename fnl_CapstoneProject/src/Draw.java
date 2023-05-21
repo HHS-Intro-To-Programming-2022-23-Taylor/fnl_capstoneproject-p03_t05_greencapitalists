@@ -191,7 +191,7 @@ public class Draw extends JPanel implements MouseListener {
 		}
 		
 		//Sets the gameRunning Method
-		if(timePassed >= 10)
+		if(timePassed >= 180)
 		{
 			gameRunning = 1;
 		}
