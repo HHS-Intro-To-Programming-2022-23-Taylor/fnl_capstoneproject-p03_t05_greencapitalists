@@ -160,15 +160,46 @@ public class Draw extends JPanel implements MouseListener {
 			g.drawImage(solarPanel, 330 + i*30, 438, 30, 30, this);
 		}
 		
-		//Timer - Checks for elapsed time
-		long currentTime = System.currentTimeMillis();
-		long elapsedTime = currentTime - startTime;
-		if(elapsedTime >= timeTillNextResource)
+		//Checks if the game is over or not, and draws an end message based on that
+		switch(gameRunning)
 		{
-			timeTillNextResource += 1000;
-			resourceManager.giveResource();
-			timePassed++;
+		case 0:
+			//Timer - Checks for elapsed time - Only works while gameRunning = 0
+			long currentTime = System.currentTimeMillis();
+			long elapsedTime = currentTime - startTime;
+			if(elapsedTime >= timeTillNextResource)
+			{
+				timeTillNextResource += 1000;
+				resourceManager.giveResource();
+				timePassed++;
+			}
+			break;
+		case 1:
+			g.setFont(new Font("TimesRoman", 50, 50));
+			g.setColor(Color.DARK_GRAY);
+			g.drawString("GAME OVER", 300, 300);
+			resourceManager.setResourceRate(0);
+			break;
+		case 2:
+			g.setFont(new Font("TimesRoman", 50, 50));
+			g.setColor(Color.DARK_GRAY);
+			g.drawString("YOU LOSE", 300, 300);
+			break;
+		default: 
+			break;
+			
 		}
+		
+		//Sets the gameRunning Method
+		if(timePassed >= 10)
+		{
+			gameRunning = 1;
+		}
+		if(resourceManager.getEnvironmentScore() <= 0)
+		{
+			gameRunning = 2;
+		}
+		
 		
 		//Makes sure values don't drop below 0
 		if(timePassed >= 180)
@@ -181,12 +212,7 @@ public class Draw extends JPanel implements MouseListener {
 
 	}
 
-	//Allows the MainControl to change the gameRunning field, ending the game
-	public void setGameRunning(int newNum)
-	{
-		gameRunning = newNum;
-	}
-	
+
 	//Returns the time passed
 	public int getTimePassed()
 	{

@@ -11,11 +11,7 @@ public class MainControl {
 
 		// create a window frame
 		Draw mainScreen = new Draw();
-		ResourceManagement resourceManagement = new ResourceManagement();
-
-		checkStatus();
 		
-
 	
 	
 	}

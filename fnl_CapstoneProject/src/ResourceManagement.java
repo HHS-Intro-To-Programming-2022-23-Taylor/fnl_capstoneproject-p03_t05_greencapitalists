@@ -121,11 +121,12 @@ public class ResourceManagement {
 		environmentScore -= environmentReduction;
 	}
 	
-	//ENDGAME: Ends game. Not sure what to do in it. Will be called when timer hits zero, or if any of my methods
-	//realize that the environmental score is zero (or below).
-	public void endGame() {
-		
+	public void setResourceRate(int newResourceRate)
+	{
+		resourcesRate = newResourceRate;
 	}
+	
+
 	
 //	public void test(Building building, boolean sustainable) {
 //		if (building) {
