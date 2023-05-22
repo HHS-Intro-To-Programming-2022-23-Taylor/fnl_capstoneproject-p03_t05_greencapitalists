@@ -10,7 +10,7 @@ public class MainControl {
 		// TODO Auto-generated method stub
 
 		// create a window frame
-		Draw mainScreen = new Draw();
+		new Draw();
 		
 	
 	
