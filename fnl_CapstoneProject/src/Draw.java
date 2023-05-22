@@ -29,6 +29,8 @@ public class Draw extends JPanel implements MouseListener {
 	private int mouseX;
 	private int mouseY;
 	
+	private Font endText = new Font("TimeRoman", 50, 50);
+	
 	//Integer which keeps game running. If 0, game is running; if 1, game is over (3 minutes up); if two, game is lost (Environment score 0).
 	private int gameRunning = 0;
 
@@ -82,7 +84,7 @@ public class Draw extends JPanel implements MouseListener {
 		g.drawString("Build House:", 70, 120);
 		g.drawString("Cost: 25 resources", 70, 140);
 		g.drawString("Credit: 5 points", 70, 160);
-		g.drawString("Environment: -5%", 70, 180);
+		g.drawString("Environment:  -5%", 70, 180);
 		
 		//Draw image in the center of the screen
 		g.drawImage(buildings, 550, 100, 200, 175, this);
@@ -165,23 +167,16 @@ public class Draw extends JPanel implements MouseListener {
 		{
 		case 0:
 			//Timer - Checks for elapsed time - Only works while gameRunning = 0
-			long currentTime = System.currentTimeMillis();
-			long elapsedTime = currentTime - startTime;
-			if(elapsedTime >= timeTillNextResource)
-			{
-				timeTillNextResource += 1000;
-				resourceManager.giveResource();
-				timePassed++;
-			}
+			calculateTime();
 			break;
 		case 1:
-			g.setFont(new Font("TimesRoman", 50, 50));
+			g.setFont(endText);
 			g.setColor(Color.DARK_GRAY);
 			g.drawString("GAME OVER", 300, 300);
 			resourceManager.setResourceRate(0);
 			break;
 		case 2:
-			g.setFont(new Font("TimesRoman", 50, 50));
+			g.setFont(endText);
 			g.setColor(Color.DARK_GRAY);
 			g.drawString("YOU LOSE", 300, 300);
 			break;
@@ -190,15 +185,7 @@ public class Draw extends JPanel implements MouseListener {
 			
 		}
 		
-		//Sets the gameRunning Method
-		if(timePassed >= 180)
-		{
-			gameRunning = 1;
-		}
-		if(resourceManager.getEnvironmentScore() <= 0)
-		{
-			gameRunning = 2;
-		}
+		calculateGameRunning();
 		
 		
 		//Makes sure values don't drop below 0
@@ -212,7 +199,34 @@ public class Draw extends JPanel implements MouseListener {
 
 	}
 
+	//Keeps checking whether the game is over, whether by running out of time or by reaching environment score 0.
+	public void calculateGameRunning()
+	{
+		//Sets the gameRunning Method
+				if(timePassed >= 180)
+				{
+					gameRunning = 1;	//Game over
+				}
+				if(resourceManager.getEnvironmentScore() <= 0)
+				{
+					gameRunning = 2;	//Game lost
+				}
+	}
 
+	//Calculates the amount of time passed from when the game started. Every time one second (100 milliseconds) passes,
+	// the amount of resources increases by resourceRate, and the timePassed count goes up by one. 
+	public void calculateTime()
+	{
+		long currentTime = System.currentTimeMillis();
+		long elapsedTime = currentTime - startTime;
+		if(elapsedTime >= timeTillNextResource)
+		{
+			timeTillNextResource += 1000;
+			resourceManager.giveResource();
+			timePassed++;
+		}
+	}
+	
 	//Returns the time passed
 	public int getTimePassed()
 	{
