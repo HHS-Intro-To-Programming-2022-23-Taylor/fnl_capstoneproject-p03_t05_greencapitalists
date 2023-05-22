@@ -134,16 +134,22 @@ public class Draw extends JPanel implements MouseListener {
 		g.fillRect(190, 440, 60, 60);
 		g.drawImage(solarPanel, 195, 445, 50, 50, this);
 		
+		//Writes the game instructions on the screen
+		g.setColor(Color.BLACK);
+		g.drawString("Instructions: Buy buildings by clicking the green buttons."
+				+ "Try to get as many points as you can.", 255, 110);
+		
+		
 		//Draws all the building counts
 		g.setColor(Color.BLACK);
 		g.drawString("Houses: ", 255, 360);
-		g.drawRect(255, 375, 200, 0);
+		g.drawRect(255, 375, 600, 0);
 		g.drawString("Stores: ", 255, 390);
-		g.drawRect(255, 406, 200, 0);
+		g.drawRect(255, 406, 600, 0);
 		g.drawString("Factories: ", 255, 420);
-		g.drawRect(255, 437, 200, 0);
+		g.drawRect(255, 437, 600, 0);
 		g.drawString("Solar Panels: ", 255, 450);
-		g.drawRect(255, 468, 200, 0);
+		g.drawRect(255, 468, 600, 0);
 		//Draws the building "bar graphs"
 		for(int i = 0; i < resourceManager.getHouseCount(); i++)	//Houses
 		{
