@@ -21,10 +21,10 @@ public class ResourceManagement {
 		static private int points = 0; //Score for spending resource to build houses, etc.
 	
 	static private int houseCount = 0, storeCount = 0, factoryCount = 0, solarPanelCount = 0; //How many of each building
-	House house = new House();
-	Store store = new Store();
-	Factory factory = new Factory();
-	SolarPanel solarPanel = new SolarPanel();
+	Building house = new House();
+	Building store = new Store();
+	ResourceBuilding factory = new Factory();
+	ResourceBuilding solarPanel = new SolarPanel();
 		
 	//constructors
 	
