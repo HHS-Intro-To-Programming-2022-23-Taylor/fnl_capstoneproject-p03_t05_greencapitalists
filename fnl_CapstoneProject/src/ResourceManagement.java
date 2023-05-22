@@ -75,6 +75,18 @@ public class ResourceManagement {
 		
 	}
 	
+	//Buy method for normal buildings (Buildings that don't give resources)
+	public void buyBuilding(Building building)
+	{
+		if(building.getCost() > resources)
+		{
+			return;
+		}
+		resources -= building.getCost();
+		environmentScore -= building.getEnviScore();
+		
+	}
+	
 	//CATEGORY: Resources
 	
 	//For others classes to use if needed, may delete if unnecessary
