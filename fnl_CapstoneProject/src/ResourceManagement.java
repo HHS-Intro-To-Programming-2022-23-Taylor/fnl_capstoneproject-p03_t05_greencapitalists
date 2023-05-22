@@ -13,14 +13,14 @@ public class ResourceManagement {
 	
 	//public Building building;
 	//resource
-		static private int resources = 100; //Resources you start of with. Buy a factory first, please!
-		static private int resourcesRate = 0; //The rate at which resources are generated (per second). dr/dt
+		private int resources = 100; //Resources you start of with. Buy a factory first, please!
+		private int resourcesRate = 0; //The rate at which resources are generated (per second). dr/dt
 	//environment score
-		static private int environmentScore = 100; //Start of at 100%. Buying buildings will reduce this number. Hits zero, game over.
+		private int environmentScore = 100; //Start of at 100%. Buying buildings will reduce this number. Hits zero, game over.
 	//points
-		static private int points = 0; //Score for spending resource to build houses, etc.
+		private int points = 0; //Score for spending resource to build houses, etc.
 	
-	static private int houseCount = 0, storeCount = 0, factoryCount = 0, solarPanelCount = 0; //How many of each building
+	private int houseCount = 0, storeCount = 0, factoryCount = 0, solarPanelCount = 0; //How many of each building
 	Building house = new House();
 	Building store = new Store();
 	ResourceBuilding factory = new Factory();
@@ -84,6 +84,15 @@ public class ResourceManagement {
 		}
 		resources -= building.getCost();
 		environmentScore -= building.getEnviScore();
+		points += building.getPoints();
+		if(building.getType() == "house")
+		{
+			houseCount++;
+		}
+		if(building.getType() == "store") 
+		{
+			storeCount++;
+		}
 		
 	}
 	

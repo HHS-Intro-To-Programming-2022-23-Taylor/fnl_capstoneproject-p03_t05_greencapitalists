@@ -11,6 +11,7 @@
 	 private int enviScoreDecrease = 0;
 	 private int points = 0;
 	 private int cost = 0;
+	 private String buildingType = null;
 	 
 	 //Constructor
 	 public Building() //No-args constructor, for ResourceManagement
@@ -18,11 +19,12 @@
 		 
 	 }
 
-    public Building(int enviScoreDecreaseParameter, int pointsParameter, int costParameter)
+    public Building(int enviScoreDecreaseParameter, int pointsParameter, int costParameter, String buildingType)
     {
     	enviScoreDecrease = enviScoreDecreaseParameter;
     	points = pointsParameter;
     	cost = costParameter;
+    	this.buildingType = buildingType;
     }
     
 	//Methods
@@ -43,5 +45,10 @@
     public int getCost()
     {
     	return cost;
+    }
+    
+    public String getType()
+    {
+    	return buildingType;
     }
  }

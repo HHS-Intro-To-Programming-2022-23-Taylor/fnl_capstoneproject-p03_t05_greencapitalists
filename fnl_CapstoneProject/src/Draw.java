@@ -15,11 +15,11 @@ public class Draw extends JPanel implements MouseListener {
 	// JFrame points;
 	// JFrame resources;
 	// JTextField display = new JTextField("hi");
-	private Image house = new ImageIcon("House.gif").getImage();
-	private Image store = new ImageIcon("Store.gif").getImage();
-	private Image factory = new ImageIcon("Factory.gif").getImage();
-	private Image solarPanel = new ImageIcon("SolarPanel.gif").getImage();
-	private Image buildings = new ImageIcon("buildings.gif").getImage();
+	private Image houseImg = new ImageIcon("House.gif").getImage();
+	private Image storeImg = new ImageIcon("Store.gif").getImage();
+	private Image factoryImg = new ImageIcon("Factory.gif").getImage();
+	private Image solarPanelImg = new ImageIcon("SolarPanel.gif").getImage();
+	private Image buildingsImg = new ImageIcon("buildings.gif").getImage();
 
 	ResourceManagement resourceManager = new ResourceManagement();
 	private long startTime = System.currentTimeMillis();
@@ -28,6 +28,11 @@ public class Draw extends JPanel implements MouseListener {
 	
 	private int mouseX;
 	private int mouseY;
+	
+	Building house = new House();
+	Building store = new Store();
+	ResourceBuilding factory = new Factory();
+	ResourceBuilding solarPanel = new SolarPanel();
 	
 	private Font endText = new Font("TimeRoman", 50, 50);
 	
@@ -53,8 +58,6 @@ public class Draw extends JPanel implements MouseListener {
 		// add the panel to the frame
 		Container windowContainer = mainScreen.getContentPane();// get the window's container
 		windowContainer.add(this); // add the panel to the window
-
-
 
 		// make the window visible
 		mainScreen.setVisible(true);
@@ -87,7 +90,7 @@ public class Draw extends JPanel implements MouseListener {
 		g.drawString("Environment:  -5%", 70, 180);
 		
 		//Draw image in the center of the screen
-		g.drawImage(buildings, 550, 100, 200, 175, this);
+		g.drawImage(buildingsImg, 550, 100, 200, 175, this);
 
 		// build stores box
 		g.drawRect(50, 100, 200, 300);
@@ -126,13 +129,13 @@ public class Draw extends JPanel implements MouseListener {
 		//Draws all the images of the buildings, or "buttons"
 		g.setColor(Color.GREEN);
 		g.fillRect(190, 140, 60, 60);
-		g.drawImage(house, 195, 145, 50, 50, this);
+		g.drawImage(houseImg, 195, 145, 50, 50, this);
 		g.fillRect(190, 240, 60, 60);
-		g.drawImage(store, 195, 245, 50, 50, this);
+		g.drawImage(storeImg, 195, 245, 50, 50, this);
 		g.fillRect(190, 340, 60, 60);
-		g.drawImage(factory, 195, 345, 50, 50, this);
+		g.drawImage(factoryImg, 195, 345, 50, 50, this);
 		g.fillRect(190, 440, 60, 60);
-		g.drawImage(solarPanel, 195, 445, 50, 50, this);
+		g.drawImage(solarPanelImg, 195, 445, 50, 50, this);
 		
 		//Writes the game instructions on the screen
 		g.setColor(Color.BLACK);
@@ -153,19 +156,19 @@ public class Draw extends JPanel implements MouseListener {
 		//Draws the building "bar graphs"
 		for(int i = 0; i < resourceManager.getHouseCount(); i++)	//Houses
 		{
-			g.drawImage(house, 330 + i*30, 345, 30, 30, this);
+			g.drawImage(houseImg, 330 + i*30, 345, 30, 30, this);
 		}
 		for(int i = 0; i < resourceManager.getStoreCount(); i++)	//Stores
 		{
-			g.drawImage(store, 330 + i*30, 376, 30, 30, this);
+			g.drawImage(storeImg, 330 + i*30, 376, 30, 30, this);
 		}
 		for(int i = 0; i < resourceManager.getFactoryCount(); i++)	//Factories
 		{
-			g.drawImage(factory, 330 + i*30, 407, 30, 30, this);
+			g.drawImage(factoryImg, 330 + i*30, 407, 30, 30, this);
 		}
 		for(int i = 0; i < resourceManager.getSolarCount(); i++)	//Panels
 		{
-			g.drawImage(solarPanel, 330 + i*30, 438, 30, 30, this);
+			g.drawImage(solarPanelImg, 330 + i*30, 438, 30, 30, this);
 		}
 		
 		//Checks if the game is over or not, and draws an end message based on that
@@ -247,12 +250,12 @@ public class Draw extends JPanel implements MouseListener {
 		//Checks if house is bought
 		if (mouseX >= 195 && mouseX <= 245 && mouseY >= 145 && mouseY <= 195)
 		{
-			resourceManager.buyHouse();
+			resourceManager.buyBuilding(house);
 		}
 		//Checks if store is bought
 		if (mouseX >= 195 && mouseX <= 245 && mouseY >= 245 && mouseY <= 295)
 		{
-			resourceManager.buyStore();
+			resourceManager.buyBuilding(store);
 		}
 		//Checks if factory is bought
 		if (mouseX >= 195 && mouseX <= 245 && mouseY >= 345 && mouseY <= 395)

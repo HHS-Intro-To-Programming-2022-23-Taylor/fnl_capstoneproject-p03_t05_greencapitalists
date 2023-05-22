@@ -18,9 +18,9 @@ public abstract class ResourceBuilding extends Building{
 		
 	}
 	
-	public ResourceBuilding(int enviScoreDecreaseParameter, int pointsParameter, int costParameter, int resourceRateParameter)
+	public ResourceBuilding(int enviScoreDecreaseParameter, int pointsParameter, int costParameter, String buildingType, int resourceRateParameter)
 	{
-		super(enviScoreDecreaseParameter, pointsParameter, costParameter);
+		super(enviScoreDecreaseParameter, pointsParameter, costParameter, buildingType);
 		resourceRate = resourceRateParameter;
 	}
 
