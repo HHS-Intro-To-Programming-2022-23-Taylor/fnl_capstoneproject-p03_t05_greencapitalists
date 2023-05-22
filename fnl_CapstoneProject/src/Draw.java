@@ -260,13 +260,13 @@ public class Draw extends JPanel implements MouseListener {
 		//Checks if factory is bought
 		if (mouseX >= 195 && mouseX <= 245 && mouseY >= 345 && mouseY <= 395)
 		{
-			resourceManager.buyFactory();
+			resourceManager.buyResourceBuilding(factory);
 			repaint();
 		}
 		//Checks if solar panel is bought
 		if (mouseX >= 195 && mouseX <= 245 && mouseY >= 445 && mouseY <= 495)
 		{
-			resourceManager.buySolarPanel();
+			resourceManager.buyResourceBuilding(solarPanel);
 			repaint();
 		}
 	}
