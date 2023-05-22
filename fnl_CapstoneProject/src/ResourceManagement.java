@@ -33,47 +33,7 @@ public class ResourceManagement {
 	//methods
 	
 	//This is called when a building is bought. Checks if can be bought first, then increases the points based on the building.
-	public void buyStore() {
-		if (store.getCost() > resources) {
-			return; //Cancels the whole method (Item cannot be bought!)
-		}
-		resources -= store.getCost();
-		environmentScore -= store.getEnviScore();
-		points += store.getPoints();
-		storeCount++;
-	}
-	
-	public void buyHouse() {
-		if (house.getCost() > resources) {
-			return; //Cancels the whole method (Item cannot be bought!)
-		}
-		resources -= house.getCost();
-		environmentScore -= house.getEnviScore();
-		points += house.getPoints();
-		houseCount++;
-	}
-	
-	//This is called when a building is bought. Checks if can be bought first, then sets the increase in rate.
-	public void buyFactory() {
-		if (factory.getCost() > resources) {
-			return; //Cancels the whole method (Item cannot be bought!)
-		}
-		resources -= factory.getCost();
-		environmentScore -= factory.getEnviScore();
-		resourcesRate += factory.getResourceRate();
-		factoryCount++;
-	}
-	
-	public void buySolarPanel() {
-		if (solarPanel.getCost() > resources) {
-			return; //Cancels the whole method (Item cannot be bought!)
-		}
-		resources -= solarPanel.getCost();
-		environmentScore -= solarPanel.getEnviScore();
-		resourcesRate += solarPanel.getResourceRate();
-		solarPanelCount++;
-		
-	}
+
 	
 	//Buy method for normal buildings (Buildings that don't give resources)
 	public void buyBuilding(Building building)
@@ -94,6 +54,26 @@ public class ResourceManagement {
 			storeCount++;
 		}
 		
+	}
+	
+	public void buyResourceBuilding(ResourceBuilding building)
+	{
+		if(building.getCost() > resources)
+		{
+			return;
+		}
+		resources -= building.getCost();
+		environmentScore -= building.getEnviScore();
+		points += building.getPoints();
+		resourcesRate += building.getResourceRate();
+		if(building.getType() == "solar panel")
+		{
+			solarPanelCount++;
+		}
+		if(building.getType() == "factory")
+		{
+			factoryCount++;
+		}
 	}
 	
 	//CATEGORY: Resources
