@@ -243,11 +243,6 @@ public class Draw extends JPanel implements MouseListener {
 		}
 	}
 	
-	//Returns the time passed
-	public int getTimePassed()
-	{
-		return timePassed;
-	}
 
 	//Checks where and when a mouse is clicked on the JComponent. Used as a button.
 	public void mouseClicked(MouseEvent e) {

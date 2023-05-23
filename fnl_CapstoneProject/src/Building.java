@@ -41,12 +41,13 @@
     	return points;
     }
     
-    //Returns buildings
+    //Returns the building's cost
     public int getCost()
     {
     	return cost;
     }
     
+    //Returns a string that is the building's name.
     public String getType()
     {
     	return buildingType;

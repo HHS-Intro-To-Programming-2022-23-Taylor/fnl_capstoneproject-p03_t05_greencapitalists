@@ -5,7 +5,6 @@ Rev: 01
 Notes: Start of ResourceManagement.java
  */
 
-import javax.swing.*;
 
 public class ResourceManagement {
 
@@ -35,42 +34,43 @@ public class ResourceManagement {
 	//This is called when a building is bought. Checks if can be bought first, then increases the points based on the building.
 
 	
-	//Buy method for normal buildings (Buildings that don't give resources)
+	//Buy method for normal buildings (Buildings that don't give resources). The input parameter is the type of building being bought.
 	public void buyBuilding(Building building)
 	{
-		if(building.getCost() > resources)
+		if(building.getCost() > resources) //Checks if there are enough resources to buy the ResourceBuilding.
 		{
 			return;
 		}
-		resources -= building.getCost();
-		environmentScore -= building.getEnviScore();
-		points += building.getPoints();
-		if(building.getType() == "house")
+		resources -= building.getCost();				//
+		environmentScore -= building.getEnviScore();	//These lines all add and subtract resources, points, environment score, etc, based 
+		points += building.getPoints();					//on the building's fields.
+		if(building.getType() == "house")						//Increases house count if the ResourceBuilding is a house
 		{
 			houseCount++;
 		}
-		if(building.getType() == "store") 
+		if(building.getType() == "store") 						////Increases store count if the ResourceBuilding is a store
 		{
 			storeCount++;
 		}
 		
 	}
 	
+	//Buys a resource building. Parameter is the type of building. 
 	public void buyResourceBuilding(ResourceBuilding building)
 	{
-		if(building.getCost() > resources)
+		if(building.getCost() > resources)	//Checks if there are enough resources to buy the ResourceBuilding.
 		{
 			return;
 		}
-		resources -= building.getCost();
-		environmentScore -= building.getEnviScore();
-		points += building.getPoints();
-		resourcesRate += building.getResourceRate();
-		if(building.getType() == "solar panel")
+		resources -= building.getCost();				//
+		environmentScore -= building.getEnviScore();	// These lines all add and subtract resources, points, environment score, etc, based 
+		points += building.getPoints();					// on the building's fields.
+		resourcesRate += building.getResourceRate();	//
+		if(building.getType() == "solar panel")					//Increases solar panel count if the ResourceBuilding is a panel
 		{
-			solarPanelCount++;
+			solarPanelCount++;				
 		}
-		if(building.getType() == "factory")
+		if(building.getType() == "factory")						//Increases factory count if the ResourceBuilding is a factory.
 		{
 			factoryCount++;
 		}

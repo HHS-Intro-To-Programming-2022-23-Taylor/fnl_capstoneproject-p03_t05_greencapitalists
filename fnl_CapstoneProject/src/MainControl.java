@@ -16,10 +16,5 @@ public class MainControl {
 	
 	}
 	
-	public void checkStatus()
-	{
-	
-		
-	}
 
 }
