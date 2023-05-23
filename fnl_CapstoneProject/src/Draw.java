@@ -251,31 +251,39 @@ public class Draw extends JPanel implements MouseListener {
 
 	//Checks where and when a mouse is clicked on the JComponent. Used as a button.
 	public void mouseClicked(MouseEvent e) {
-		mouseX = e.getX();
-		mouseY = e.getY();
+		if(gameRunning == 0)		//This if statement makes sure you can only buy buildings when the game is running
+		{
+			mouseX = e.getX();
+			mouseY = e.getY();
+			
+			//Checks if house is bought
+			if (mouseX >= 195 && mouseX <= 245 && mouseY >= 145 && mouseY <= 195)
+			{
+				resourceManager.buyBuilding(house);
+			}
+			//Checks if store is bought
+			if (mouseX >= 195 && mouseX <= 245 && mouseY >= 245 && mouseY <= 295)
+			{
+				resourceManager.buyBuilding(store);
+			}
+			//Checks if factory is bought
+			if (mouseX >= 195 && mouseX <= 245 && mouseY >= 345 && mouseY <= 395)
+			{
+				resourceManager.buyResourceBuilding(factory);
+				repaint();
+			}
+			//Checks if solar panel is bought
+			if (mouseX >= 195 && mouseX <= 245 && mouseY >= 445 && mouseY <= 495)
+			{
+				resourceManager.buyResourceBuilding(solarPanel);
+				repaint();
+			}
+		}else
+		{
+			
+		}
 		
-		//Checks if house is bought
-		if (mouseX >= 195 && mouseX <= 245 && mouseY >= 145 && mouseY <= 195)
-		{
-			resourceManager.buyBuilding(house);
-		}
-		//Checks if store is bought
-		if (mouseX >= 195 && mouseX <= 245 && mouseY >= 245 && mouseY <= 295)
-		{
-			resourceManager.buyBuilding(store);
-		}
-		//Checks if factory is bought
-		if (mouseX >= 195 && mouseX <= 245 && mouseY >= 345 && mouseY <= 395)
-		{
-			resourceManager.buyResourceBuilding(factory);
-			repaint();
-		}
-		//Checks if solar panel is bought
-		if (mouseX >= 195 && mouseX <= 245 && mouseY >= 445 && mouseY <= 495)
-		{
-			resourceManager.buyResourceBuilding(solarPanel);
-			repaint();
-		}
+		
 	}
  
 	
