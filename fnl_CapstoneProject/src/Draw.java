@@ -139,8 +139,15 @@ public class Draw extends JPanel implements MouseListener {
 		
 		//Writes the game instructions on the screen
 		g.setColor(Color.BLACK);
-		g.drawString("Instructions: Buy buildings by clicking the green buttons."
-				+ "Try to get as many points as you can.", 255, 110);
+		g.drawString("Instructions: Buy buildings by clicking the green buttons.", 255, 110);
+		g.drawString("Try to get as many points as you can, while keeping your", 255, 125);
+		g.drawString("environmental score high. Each building's points, ",  255, 140);
+		g.drawString("environment score decrease, and cost are shown.", 255, 155);
+		g.drawString("Factories and solar panels give you more resources,", 255, 170);
+		g.drawString("but not points.", 255, 185);
+		g.drawString("TIPS: The first building you buy should be a factory,", 255, 225);
+		g.drawString("and after that, invest in solar panels, then houses or", 255, 240);
+		g.drawString("stores.", 255, 255);
 		
 		
 		//Draws all the building counts
