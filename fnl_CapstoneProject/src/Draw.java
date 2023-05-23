@@ -160,7 +160,7 @@ public class Draw extends JPanel implements MouseListener {
 		g.drawString("Factories: ", 255, 420);
 		g.drawRect(255, 437, 600, 0);
 		g.drawString("Solar Panels: ", 255, 450);
-		g.drawRect(255, 468, 600, 0);
+		g.drawRect(255, 470, 600, 0);
 		//Draws the building "bar graphs"
 		for(int i = 0; i < resourceManager.getHouseCount(); i++)	//Houses
 		{
