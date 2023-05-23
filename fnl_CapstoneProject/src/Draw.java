@@ -85,9 +85,9 @@ public class Draw extends JPanel implements MouseListener {
 		// build houses box
 		g.drawRect(50, 100, 200, 400);
 		g.drawString("Build House:", 70, 120);
-		g.drawString("Cost: 25 resources", 70, 140);
-		g.drawString("Credit: 5 points", 70, 160);
-		g.drawString("Environment:  -5%", 70, 180);
+		g.drawString("Cost: 25 resources", 70, 138);
+		g.drawString("Credit: 5 points", 70, 156);
+		g.drawString("Environment:  -5%", 70, 174);
 		
 		//Draw image in the center of the screen
 		g.drawImage(buildingsImg, 550, 100, 200, 175, this);
@@ -95,24 +95,25 @@ public class Draw extends JPanel implements MouseListener {
 		// build stores box
 		g.drawRect(50, 100, 200, 300);
 		g.drawString("Build Store:", 70, 220);
-		g.drawString("Cost: 100 resources", 70, 240);
-		g.drawString("Credit: 25 points", 70, 260);
-		g.drawString("Environment: -5%", 70, 280);
+		g.drawString("Cost: 100 resources", 70, 238);
+		g.drawString("Credit: 25 points", 70, 256);
+		g.drawString("Environment: -5%", 70, 274);
 
 		// build factories box
 		g.drawRect(50, 100, 200, 200);
 		g.drawString("Build Factory:", 70, 320);
-		g.drawString("Cost: 80 resources", 70, 340);
-		g.drawString("Rate: 5 resource/sec", 70, 360);
-		g.drawString("Environment: -25%", 70, 380);
-		
+		g.drawString("Cost: 80 resources", 70, 338);
+		g.drawString("Credit: 5 points", 70, 356);
+		g.drawString("Environment: -25%", 70, 374);
+		g.drawString("Rate: 5 resource/sec", 70, 392);	
 
 		// build solar panels box
 		g.drawRect(50, 100, 200, 100);
 		g.drawString("Build Solar Panel:", 70, 420);
-		g.drawString("Cost: 120 resources", 70, 440);
-		g.drawString("Rate: 3 resource/sec", 70, 460);
-		g.drawString("Environment: -0%", 70, 480);
+		g.drawString("Cost: 120 resources", 70, 438);
+		g.drawString("Rate: 3 resource/sec", 70, 456);
+		g.drawString("Environment: -0%", 70, 474);
+		g.drawString("Rate: 3 resource/sec", 70, 492);
 
 		// print environmental score
 		g.drawString("Environmental Score:", 400, 525);
@@ -143,8 +144,8 @@ public class Draw extends JPanel implements MouseListener {
 		g.drawString("Try to get as many points as you can, while keeping your", 255, 125);
 		g.drawString("environmental score high. Each building's points, ",  255, 140);
 		g.drawString("environment score decrease, and cost are shown.", 255, 155);
-		g.drawString("Factories and solar panels give you more resources,", 255, 170);
-		g.drawString("but not points.", 255, 185);
+		g.drawString("Factories and solar panels increase your resources,", 255, 170);
+		g.drawString("but give very few points.", 255, 185);
 		g.drawString("TIPS: The first building you buy should be a factory,", 255, 225);
 		g.drawString("and after that, invest in solar panels, then houses or", 255, 240);
 		g.drawString("stores.", 255, 255);
