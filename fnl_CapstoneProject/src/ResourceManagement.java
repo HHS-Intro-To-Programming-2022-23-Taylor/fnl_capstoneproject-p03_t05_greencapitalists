@@ -83,12 +83,8 @@ public class ResourceManagement {
 		return resources;
 	}
 	
-	//For others classes to use if needed, may delete if unnecessary
-	public void setResources(int resources) {
-		this.resources = resources;
-	}
 	
-	//For others classes to use if needed, may delete if unnecessary
+	//Increases the number of resources by resource rate. Called periodically by draw.
 	public void giveResource() {
 		resources += resourcesRate;
 	}
@@ -100,11 +96,6 @@ public class ResourceManagement {
 		return points;
 	}
 	
-	//For others classes to use if needed, may delete if unnecessary
-	public void setPoints(int points) {
-		this.points = points;
-	}
-	
 	//CATEGORY: Environment Score
 	
 	//For draw to know what the environment score is, so it can write it on the screen.
@@ -112,20 +103,6 @@ public class ResourceManagement {
 		return environmentScore;
 	}
 	
-	//For others classes to use if needed, may delete if unnecessary
-	public void setEnvironmentScore(int environmentScore) {
-		this.environmentScore = environmentScore;
-	}
-	
-	//Reduces the environmental score. May delete this due to redundancy (other method has what this method does).
-	public void EnvironmentScoreReudction(int environmentReduction) {
-		environmentScore -= environmentReduction;
-	}
-	
-	public void setResourceRate(int newResourceRate)
-	{
-		resourcesRate = newResourceRate;
-	}
 	
 
 	
