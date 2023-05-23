@@ -89,6 +89,11 @@ public class ResourceManagement {
 		resources += resourcesRate;
 	}
 	
+	public void setResourceRate(int newResourceRate)
+	{
+		resourcesRate = newResourceRate;
+	}
+	
 	//CATEGORY: Points
 	
 	//For others classes to use if needed, may delete if unnecessary
