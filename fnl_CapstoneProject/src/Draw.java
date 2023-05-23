@@ -194,7 +194,7 @@ public class Draw extends JPanel implements MouseListener {
 			break;
 		case 2:
 			g.setFont(endText);
-			g.setColor(Color.DARK_GRAY);
+			g.setColor(Color.RED);
 			g.drawString("YOU LOSE", 300, 300);
 			break;
 		default: 
