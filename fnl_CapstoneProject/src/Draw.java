@@ -67,7 +67,14 @@ public class Draw extends JPanel implements MouseListener {
 				
 	}
 	
-	//Draws the rest of the graphics. 
+	//Creates all the complex graphics, eg the buttons, the "bar graph" of the buildings, 
+	// the instructions on how to play, the boxes with all the game info, etc.
+	//Also, this method calls other methods such as calculateGameRunning and 
+	// calculateTime, in which algorithms are done to keep track of the game's essential 
+	// variables.
+	//
+	//At the end of this method, paint() is called, thus looping the method and making it 
+	// run indefinitely. 
 	public void paint(Graphics g) {
 
 		super.paintComponent(g);
@@ -230,45 +237,44 @@ public class Draw extends JPanel implements MouseListener {
 				}
 	}
 
-	//Calculates the amount of time passed from when the game started. Every time one second (100 milliseconds) passes,
+	//Calculates the amount of time passed from when the game started. Every time one second (1000 milliseconds) passes,
 	// the amount of resources increases by resourceRate, and the timePassed count goes up by one. 
 	public void calculateTime()
 	{
-		long currentTime = System.currentTimeMillis();
-		long elapsedTime = currentTime - startTime;
-		if(elapsedTime >= timeTillNextResource)
+		long currentTime = System.currentTimeMillis();	//Checks the current time
+		long elapsedTime = currentTime - startTime;		//Checks how much time has passed 
+		if(elapsedTime >= timeTillNextResource)			//Checks if the time passed is more than the amount of time till the next second.
 		{
-			timeTillNextResource += 1000;
-			resourceManager.giveResource();
-			timePassed++;
+			timeTillNextResource += 1000;	//Increases by 1 second
+			resourceManager.giveResource();		//Calls ResourceManagement and increases the resources.
+			timePassed++;					//Second count
 		}
 	}
 	
-
-	//Checks where and when a mouse is clicked on the JComponent. Used as a button.
+	//Checks where and when a mouse is clicked on the JComponent. This method is used to make makeshift 'buttons'
 	public void mouseClicked(MouseEvent e) {
 		if(gameRunning == 0)		//This if statement makes sure you can only buy buildings when the game is running
 		{
 			mouseX = e.getX();
 			mouseY = e.getY();
 			
-			//Checks if house is bought
+			//Checks if house is bought by checking if mouse is clicked inside house image.
 			if (mouseX >= 195 && mouseX <= 245 && mouseY >= 145 && mouseY <= 195)
 			{
 				resourceManager.buyBuilding(house);
 			}
-			//Checks if store is bought
+			//Checks if store is bought checking if mouse is clicked inside store image.
 			if (mouseX >= 195 && mouseX <= 245 && mouseY >= 245 && mouseY <= 295)
 			{
 				resourceManager.buyBuilding(store);
 			}
-			//Checks if factory is bought
+			//Checks if factory is bought checking if mouse is clicked inside factory image.
 			if (mouseX >= 195 && mouseX <= 245 && mouseY >= 345 && mouseY <= 395)
 			{
 				resourceManager.buyResourceBuilding(factory);
 				repaint();
 			}
-			//Checks if solar panel is bought
+			//Checks if solar panel is bought checking if mouse is clicked inside solar panel image.
 			if (mouseX >= 195 && mouseX <= 245 && mouseY >= 445 && mouseY <= 495)
 			{
 				resourceManager.buyResourceBuilding(solarPanel);
@@ -276,7 +282,7 @@ public class Draw extends JPanel implements MouseListener {
 			}
 		}else
 		{
-			
+			//Does nothing if mouse is clicked anywhere.
 		}
 		
 		
@@ -284,6 +290,7 @@ public class Draw extends JPanel implements MouseListener {
  
 	
 	//All these methods are useless, they are not used in the program.
+	//Only exist to fulfill the implementation of MouseListener.
 	public void mousePressed(MouseEvent e) {
 		
 	}

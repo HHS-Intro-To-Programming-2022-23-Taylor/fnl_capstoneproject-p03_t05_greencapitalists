@@ -8,10 +8,9 @@ Notes: Start of ResourceManagement.java
 
 public class ResourceManagement {
 
-	//fields
+	//Fields
 	
-	//public Building building;
-	//resource
+	//resources
 		private int resources = 100; //Resources you start of with. Buy a factory first, please!
 		private int resourcesRate = 0; //The rate at which resources are generated (per second). dr/dt
 	//environment score
@@ -19,21 +18,14 @@ public class ResourceManagement {
 	//points
 		private int points = 0; //Score for spending resource to build houses, etc.
 	
+	//building counts
 	private int houseCount = 0, storeCount = 0, factoryCount = 0, solarPanelCount = 0; //How many of each building
-	Building house = new House();
-	Building store = new Store();
-	ResourceBuilding factory = new Factory();
-	ResourceBuilding solarPanel = new SolarPanel();
-		
-	//constructors
 	
-	
-	
-	//methods
-	
-	//This is called when a building is bought. Checks if can be bought first, then increases the points based on the building.
+	//No constructor necessary. 
 
 	
+	// Methods
+		
 	//Buy method for normal buildings (Buildings that don't give resources). The input parameter is the type of building being bought.
 	public void buyBuilding(Building building)
 	{
@@ -55,7 +47,7 @@ public class ResourceManagement {
 		
 	}
 	
-	//Buys a resource building. Parameter is the type of building. 
+	//Buys a resource building. Parameter is the type of ResourceBuilding being bought. 
 	public void buyResourceBuilding(ResourceBuilding building)
 	{
 		if(building.getCost() > resources)	//Checks if there are enough resources to buy the ResourceBuilding.
@@ -76,9 +68,9 @@ public class ResourceManagement {
 		}
 	}
 	
-	//CATEGORY: Resources
+	//					CATEGORY: Resources
 	
-	//For others classes to use if needed, may delete if unnecessary
+	//For draw to know how many resources the player has.
 	public int getResources() {
 		return resources;
 	}
@@ -89,35 +81,27 @@ public class ResourceManagement {
 		resources += resourcesRate;
 	}
 	
-	
+	//Changes the resource rate. Only used when draw is setting the rate to 0, when the game ends
 	public void setResourceRate(int newResourceRate)
 	{
 		resourcesRate = newResourceRate;
 	}
 	
-	//CATEGORY: Points
+	//					CATEGORY: Points
 	
-	//For others classes to use if needed, may delete if unnecessary
+	//For draw to know how many points the player has.
 	public int getPoints() {
 		return points;
 	}
 	
-	//CATEGORY: Environment Score
+	//					CATEGORY: Environment Score
 	
 	//For draw to know what the environment score is, so it can write it on the screen.
 	public int getEnvironmentScore() {
 		return environmentScore;
 	}
 	
-	
-
-	
-//	public void test(Building building, boolean sustainable) {
-//		if (building) {
-//			
-//		}
-//	}
-	
+	//					CATEGORY: Buildings
 	
 	//Returns the amount of houses built by the player.
 	public int getHouseCount()
