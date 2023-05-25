@@ -12,13 +12,14 @@
 	 private int points = 0;
 	 private int cost = 0;
 	 private String buildingType = null;
-	 
-	 //Constructor
-	 public Building() //No-args constructor, for ResourceManagement
-	 {
-		 
-	 }
 
+	 /*
+	  * CONSTRUCTOR: 
+	  * Building constructor, which takes in parameters for the environment score
+	  * decrease, the points, the cost, and the name. 
+	  * All these values fill in their respective fields, so the 
+	  * accessor methods can give these fields to Draw or ResourceManagement
+	  */
     public Building(int enviScoreDecreaseParameter, int pointsParameter, int costParameter, String buildingType)
     {
     	enviScoreDecrease = enviScoreDecreaseParameter;

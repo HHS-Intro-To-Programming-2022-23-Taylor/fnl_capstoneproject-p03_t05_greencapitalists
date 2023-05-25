@@ -9,7 +9,7 @@ public class MainControl {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		// create a window frame
+		// Creates a Draw, starting the game.
 		new Draw();
 		
 	
