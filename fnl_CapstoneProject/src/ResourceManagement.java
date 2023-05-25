@@ -89,6 +89,7 @@ public class ResourceManagement {
 		resources += resourcesRate;
 	}
 	
+	
 	public void setResourceRate(int newResourceRate)
 	{
 		resourcesRate = newResourceRate;
