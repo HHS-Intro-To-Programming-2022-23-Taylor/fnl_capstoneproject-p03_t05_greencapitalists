@@ -21,7 +21,7 @@ public class Draw extends JPanel implements MouseListener {
 	private Image solarPanelImg = new ImageIcon("SolarPanel.gif").getImage();
 	private Image buildingsImg = new ImageIcon("buildings.gif").getImage();
 
-	ResourceManagement resourceManager = new ResourceManagement();
+	private ResourceManagement resourceManager = new ResourceManagement();
 	private long startTime = System.currentTimeMillis();
 	private long timeTillNextResource = 1000;
 	private int timePassed = 0;
@@ -29,10 +29,10 @@ public class Draw extends JPanel implements MouseListener {
 	private int mouseX;
 	private int mouseY;
 	
-	Building house = new House();
-	Building store = new Store();
-	ResourceBuilding factory = new Factory();
-	ResourceBuilding solarPanel = new SolarPanel();
+	private Building house = new House();
+	private Building store = new Store();
+	private ResourceBuilding factory = new Factory();
+	private ResourceBuilding solarPanel = new SolarPanel();
 	
 	private Font endText = new Font("TimeRoman", 50, 50);
 	
